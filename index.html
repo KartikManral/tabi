@@ -315,7 +315,7 @@ const KDAY_ROWS={11:['Ka'],12:['Kk'],13:['Ks'],14:['Kt'],15:['Kn'],16:['Kh'],17:
 const KVOICED_BASE={ガ:'カ',ギ:'キ',グ:'ク',ゲ:'ケ',ゴ:'コ',ザ:'サ',ジ:'シ',ズ:'ス',ゼ:'セ',ゾ:'ソ',ダ:'タ',ヂ:'チ',ヅ:'ツ',デ:'テ',ド:'ト',バ:'ハ',ビ:'ヒ',ブ:'フ',ベ:'ヘ',ボ:'ホ',パ:'ハ',ピ:'ヒ',プ:'フ',ペ:'ヘ',ポ:'ホ'};
 const KCONF=[['シ','ツ'],['ソ','ン'],['シ','ン'],['ソ','ツ'],['ウ','ワ'],['ク','ケ','タ'],['コ','ユ'],['マ','ム'],['ナ','メ'],['ヌ','ス'],['チ','テ'],['ア','マ'],['ラ','フ'],['ノ','メ'],['ミ','シ'],['ル','レ'],['ネ','ホ'],['ハ','ノ'],['ヘ','ヒ'],['バ','パ'],['ダ','タ'],['ジ','ヂ']];
 const KHOOK={
- 'ア':"A tilted anchor: a-nchor. It is the twin of あ.",
+ 'ア':"A tilted anchor: a-nchor. A shape of its own: only the sound matches あ.",
  'イ':"An icicle: one long drip leaning, one short one beside it: “ee”.",
  'ウ':"An udon bowl with a lid: the dash on top is the lid. “u”.",
  'エ':"An elevator shaft: top bar and bottom bar are the floors. “e”.",
@@ -329,7 +329,7 @@ const KHOOK={
  'シ':"A smiling face lying sideways: two dashes and a rising swoop. “she”. The swoop rises.",
  'ス':"A snake sliding down: “su”.",
  'セ':"A seesaw tilting: “se”.",
- 'ソ':"A sewing needle slanting down from the top-left: “so”, like “sew”.",
+ 'ソ':"A sewing needle: a short tick at the top, then a long stroke slanting down to the left: “so”, like “sew”.",
  'タ':"A tall table with a leg: “ta”.",
  'チ':"A cheese slice on a stick: “chee”.",
  'ツ':"Three raindrops falling straight down: tsu-nami. The long stroke falls.",
@@ -343,7 +343,7 @@ const KHOOK={
  'ハ':"The two slopes of a hut roof: “ha”.",
  'ヒ':"The heel of a high-heeled shoe: “hee”.",
  'フ':"The slope of Mount Fuji: “fu”.",
- 'ヘ':"A gentle hill. Almost identical to hiragana へ: the one shape the two scripts share.",
+ 'ヘ':"A gentle hill. Almost identical to hiragana へ: the most confusable pair across the two scripts.",
  'ホ':"A chimney with snow on the roof: “ho ho ho”.",
  'マ':"A mast with a small flag: “ma”.",
  'ミ':"Three claw marks of a cat: “mee-ow”.",
@@ -393,7 +393,7 @@ const KGRAMMAR=[[22,'おはようございます'],[23,'か'],[23,'も'],[23,'�
 const KDAYS={
 11:{title:'Signs at the Crossing',place:'Shibuya Crossing',
  story:"Mika walks you to Shibuya Crossing. Half the signs look like hiragana that someone sharpened with a knife. “Katakana,” she says. “Same sounds, new costume. You will see it on every shop front.”",
- note:{title:'A second alphabet',html:"<p><b>Katakana</b> is the second kana set. It has the same sounds as hiragana but different, sharper shapes: ア is the twin of あ. It is used mainly for words borrowed from other languages (コーヒー, coffee), foreign names, and for emphasis, a bit like italics.</p><p class='muted'>You will read it every day on menus, signs and apps.</p>"},
+ note:{title:'A second alphabet',html:"<p><b>Katakana</b> is the second kana set. It has the same sounds as hiragana but different, sharper shapes: ア and あ share a sound but not a shape. It is used mainly for words borrowed from other languages (コーヒー, coffee), foreign names, and for emphasis, a bit like italics.</p><p class='muted'>You will read it every day on menus, signs and apps.</p>"},
  teaser:"At the café window Mika points at a menu. The first thing on it is a drink you already know, written in a script you almost can read. Tomorrow: the K row, and a line that stretches sounds.",
  persona:"Mika, the learner's friend, at Shibuya Crossing, pointing at katakana signs and asking the learner to read them.",stage:"The learner has just started katakana. Use only one or two words per turn."},
 12:{title:'The Café Menu',place:'A café near Shibuya Station',
@@ -418,12 +418,12 @@ const KDAYS={
  persona:"A shop assistant in Akihabara, showing items one at a time.",stage:"The learner knows katakana vowels and K, S, T, N rows."},
 16:{title:'Crepes in Harajuku',place:'Takeshita Street, Harajuku',
  story:"Takeshita Street is a river of people, colours and sugar. Mika buys two crepes and a コーヒー for herself and says: “Order at the next stall, by yourself.”",
- note:{title:'ヘ is almost へ',html:"<p><b>ヘ</b> is almost the same shape as hiragana <b>へ</b>. They are the only pair of kana that look alike across the two scripts. Context tells you which one you are reading. The other four H-row katakana are clearly different: ハ, ヒ, フ, ホ.</p>"},
+ note:{title:'ヘ is almost へ',html:"<p><b>ヘ</b> is almost the same shape as hiragana <b>へ</b>. They are the most confusable pair across the two scripts. Context tells you which one you are reading. The other four H-row katakana are clearly different: ハ, ヒ, フ, ホ.</p>"},
  teaser:"A tourist asks for the way to the station and you realise you could not answer yet. Tomorrow: the M row, in Ginza.",
  persona:"A crepe-stall owner in Harajuku.",stage:"The learner knows katakana through the H row."},
 17:{title:'Ginza Window Shopping',place:'Ginza',
  story:"Ginza is shiny and quiet. Mika shows you a billboard for a new スマホ and explains that Japan likes to cut long loanwords short, like スマートフォン into スマホ.",
- note:{title:'Short and snappy',html:"<p>Japanese often shortens long loanwords to four beats: <b>スマートフォン</b> became <b>スマホ</b> (smartphone), <b>アニメーション</b> became <b>アニメ</b> (animation). Once you see the pattern, you can often guess the full word.</p>"},
+ note:{title:'Short and snappy',html:"<p>Japanese often shortens long loanwords to three or four beats: <b>スマートフォン</b> became <b>スマホ</b> (smartphone), <b>アニメーション</b> became <b>アニメ</b> (animation). Once you see the pattern, you can often guess the full word.</p>"},
  teaser:"Rain starts. Mika leads you into a hotel lobby to wait it out. Tomorrow: the Y and R rows.",
  persona:"A shop assistant in Ginza.",stage:"The learner knows katakana through the M row."},
 18:{title:'The Hotel Lobby',place:'A hotel lobby, Ginza',
@@ -505,7 +505,7 @@ const KAMA_WORDS=[
  [38,'じゅういち','jūichi','eleven'],[38,'にじゅう','nijū','twenty'],[38,'ごじゅう','gojū','fifty'],[38,'ひゃく','hyaku','one hundred'],[38,'せん','sen','one thousand'],[38,'いちまん','ichiman','ten thousand'],[38,'えん','en','yen'],[38,'おかね','okane','money'],
  [39,'いっぷん','ippun','one minute'],[39,'にふん','nifun','two minutes'],[39,'さんぷん','sanpun','three minutes'],[39,'ごふん','gofun','five minutes'],[39,'じゅっぷん','juppun','ten minutes'],[39,'はん','han','half (as in half past)'],[39,'なんぷん','nanpun','what minute, how many minutes'],[39,'おくれます','okuremasu','be late'],
  [40,'さむい','samui','cold (weather)'],[40,'すずしい','suzushii','cool'],[40,'あたたかい','atatakai','warm'],[40,'てんき','tenki','weather'],[40,'かぜ','kaze','wind'],[40,'はれ','hare','sunny, clear weather'],[40,'たいよう','taiyō','sun'],[40,'くもり','kumori','cloudy weather'],
- [41,'かぞく','kazoku','family'],[41,'おかあさん','okāsan','mother (someone else\'s, or when speaking to her)'],[41,'おとうさん','otōsan','father (someone else\'s, or when speaking to him)'],[41,'おにいさん','onīsan','older brother'],[41,'おねえさん','onēsan','older sister'],[41,'いもうと','imōto','younger sister (your own)'],[41,'おとうと','otōto','younger brother (your own)'],[41,'こども','kodomo','child'],
+ [41,'かぞく','kazoku','family'],[41,'おかあさん','okāsan','mother (someone else\'s, or when speaking to her)'],[41,'おとうさん','otōsan','father (someone else\'s, or when speaking to him)'],[41,'おにいさん','onīsan','older brother (someone else\'s, or when addressing him)'],[41,'おねえさん','onēsan','older sister (someone else\'s, or when addressing her)'],[41,'いもうと','imōto','younger sister (your own)'],[41,'おとうと','otōto','younger brother (your own)'],[41,'こども','kodomo','child'],
  [42,'みんな','minna','everyone'],[42,'しゅっしん','shusshin','hometown, where you are from'],[42,'おとこのひと','otoko no hito','man'],[42,'おんなのひと','onna no hito','woman'],[42,'わたしの','watashi no','my'],[42,'ぼく','boku','I (used mostly by males)'],[42,'かれ','kare','he, boyfriend'],[42,'かのじょ','kanojo','she, girlfriend'],
  [43,'ほしい','hoshii','want (a thing)'],[43,'おんがく','ongaku','music'],[43,'えいが','eiga','movie'],[43,'りょうり','ryōri','cooking, cuisine'],[43,'スポーツ','supōtsu','sports'],[43,'どうぶつ','dōbutsu','animal'],[43,'とり','tori','bird'],[43,'えび','ebi','shrimp'],
  [44,'しゅみ','shumi','hobby'],[44,'およぎます','oyogimasu','swim'],[44,'あるきます','arukimasu','walk'],[44,'はしります','hashirimasu','run'],[44,'うたいます','utaimasu','sing'],[44,'あそびます','asobimasu','play, hang out'],[44,'ならいます','naraimasu','learn (from a teacher)'],[44,'さんぽ','sanpo','a stroll'],
@@ -532,11 +532,13 @@ const KAMA_GRAMMAR=[[31,'へ'],[31,'に'],[31,'と'],[32,'が'],[36,'じゃあ�
 
 /* generate polite negative/invite/past forms for each ます verb, and -くないです/-かったです for い-adjectives */
 const ADJ_I=['たかい','やすい','おおきい','ちいさい','あたらしい','ふるい','わるい','あつい','つめたい','おいしい','さむい','すずしい','あたたかい','たのしい','むずかしい','やさしい','おもしろい','いそがしい','ちかい','とおい','いたい','ほしい'];
+const NO_VOL=['あります','います','ちがいます','おくれます','かかります','はじまります','わかります','できます'];
 function genForms(words){
   words.forEach(([day,j])=>{
     if(/ます$/.test(j)){
       const st=j.slice(0,-2),d1=Math.max(day,36),d2=Math.max(day,37);
-      KAMA_GRAMMAR.push([d1,st+'ません'],[d1,st+'ませんか'],[d1,st+'ましょう'],[d2,st+'ました'],[d2,st+'ませんでした']);
+      KAMA_GRAMMAR.push([d1,st+'ません'],[d1,st+'ませんか'],[d2,st+'ました'],[d2,st+'ませんでした']);
+      if(!NO_VOL.includes(j))KAMA_GRAMMAR.push([d1,st+'ましょう']);
     }
     if(ADJ_I.includes(j)){const st=j.slice(0,-1);KAMA_GRAMMAR.push([Math.max(day,36),st+'くないです'],[Math.max(day,37),st+'かったです']);}
   });
@@ -570,14 +572,14 @@ const KAMA_DAYS={
  teaser:'A guide asks if you want to try the next temple. You want to say no politely. Tomorrow: ません.'},
 36:{title:'Saying No, Inviting',place:'A teahouse by the beach',focus:'ません, じゃありません, ませんか, ましょう',
  story:'Mika suggests the beach. It is cold. You need two things at once: a way to say no, and a way to say let us. Both are about to appear.',
- note:{title:'Negatives and invitations',html:"<p>Polite negative: <b>ます</b> becomes <b>ません</b>: <b>いきません</b> I do not go. Nouns and な-adjectives: <b>じゃありません</b>. い-adjectives: drop い, add <b>くないです</b>: <b>たかくないです</b>. Invite with <b>ませんか</b>: <b>いっしょに いきませんか。</b> Will you come with me? Agree with <b>ましょう</b> (let us): <b>いきましょう。</b></p><p><b>ぜんぜん</b> and <b>あまり</b> need a negative: <b>あまり たかくないです。</b> Not very expensive.</p>"},
- teaser:'The beach is empty except for a surfer in a thick wetsuit. Mika says you have just used the most polite invitation in Japanese. Tomorrow: yesterday and the days of the week.'},
+ note:{title:'Negatives and invitations',html:"<p>Polite negative: <b>ます</b> becomes <b>ません</b>: <b>いきません</b> I do not go. Nouns and な-adjectives: <b>じゃありません</b>. い-adjectives: drop い, add <b>くないです</b>: <b>たかくないです</b>. Invite with <b>ませんか</b>: <b>いっしょに いきませんか。</b> Will you come with me? Suggest with <b>ましょう</b> (let us): <b>いきましょう。</b></p><p><b>ぜんぜん</b> and <b>あまり</b> need a negative: <b>あまり たかくないです。</b> Not very expensive.</p>"},
+ teaser:'The beach is empty except for a surfer in a thick wetsuit. Mika says you have just used a polite invitation. Tomorrow: yesterday and the days of the week.'},
 37:{title:'Yesterday and Saturday',place:'Yuigahama beach',focus:'ました, でした, days of the week',
  story:'By evening the sky is orange and the surfers are gone. Mika asks what you did yesterday. You only have the present tense so far.',
  note:{title:'The past, and the week',html:"<p>Past polite: <b>ました</b> for verbs: <b>たべました</b> I ate, <b>いきませんでした</b> I did not go. <b>でした</b> for nouns and な-adjectives: <b>きのうは あめでした。</b> い-adjectives: <b>〜かったです</b>: <b>おいしかったです。</b></p><p>The days end in <b>ようび</b>: <b>げつ</b> moon (Mon), <b>か</b> fire, <b>すい</b> water, <b>もく</b> tree, <b>きん</b> gold, <b>ど</b> earth, <b>にち</b> sun (Sun). Later you will see these as 月火水木金土日.</p>"},
  teaser:'A fisherman shows you the day\'s catch and says a number that sounds like a lot. Tomorrow: big numbers and yen.'},
 38:{title:'Counting Yen',place:'A fish market in Kamakura',focus:'numbers to 10,000 and えん',
- story:'The fishmonger says a number and you hear only the first syllable. Mika writes it on your hand. It is a hundred, and a half.',
+ story:'The fishmonger says a number and you hear only the first syllable. Mika writes it on your hand. It is a hundred and fifty.',
  note:{title:'Numbers past ten',html:"<p>Eleven is ten-one: <b>じゅういち</b>. Twenty is two-ten: <b>にじゅう</b>. Fifty: <b>ごじゅう</b>. One hundred <b>ひゃく</b>, one thousand <b>せん</b>, ten thousand <b>いちまん</b>. Japanese counts in ten-thousands: 100,000 is ten ten-thousands, <b>じゅうまん</b>. Money: <b>これは ごひゃくえんです。</b> 500 yen.</p><p class='muted'>Some hundreds change sound: 300 is <b>さんびゃく</b>, 600 <b>ろっぴゃく</b>, 800 <b>はっぴゃく</b>. Listen for them.</p>"},
  teaser:'You pay with a note that is bigger than you meant to use. The fishmonger smiles. Tomorrow: minutes, and how to say you are late.'},
 39:{title:'On the Minute',place:'Kita-Kamakura Station',focus:'minutes: ふん and ぷん, はん',
@@ -611,7 +613,7 @@ const KAMA_DAYS={
 46:{title:'What Do You Do?',place:'A bench by Kotoku-in pond',focus:'〜て います and jobs',
  story:'The hiker is an engineer on holiday. He asks what you do. You say something short, he nods, and the conversation continues.',
  note:{title:'Doing right now, and jobs',html:"<p><b>〜て います</b> means doing now: <b>べんきょうして います。</b> I am studying. Jobs: <b>がくせい</b> student, <b>いしゃ</b> doctor, <b>エンジニア</b> engineer, <b>かいしゃいん</b> office worker. <b>おしごとは なんですか。</b> What is your job?</p>"},
- teaser:'The hiker writes his email address on your phone. You do not know how to ask what he means by the word. Tomorrow: transport.'},
+ teaser:'The hiker waves goodbye and heads for the station. Tomorrow: transport.'},
 47:{title:'By Train, By Foot',place:'Kamakura to Enoshima',focus:'で for transport, から, まで, かかります',
  story:'The Enoden clatters towards Enoshima past the sea wall and a Shonan surf shop. Mika points at the line on the map and asks how long it will take.',
  note:{title:'で, から, まで',html:"<p><b>で</b> marks the means: <b>でんしゃで いきます。</b> I go by train. <b>あるいて いきます。</b> I go on foot (no で). <b>から</b> is from and <b>まで</b> is to: <b>かまくらから えのしままで。</b> From Kamakura to Enoshima. <b>どのくらい かかりますか。</b> How long does it take? <b>さんじゅっぷん かかります。</b></p>"},
@@ -626,7 +628,7 @@ const KAMA_DAYS={
  teaser:'The seller finds his change under a box of postcards and gives you a discount for the help. Tomorrow: colours.'},
 50:{title:'Colours of the Coast',place:'Enoshima aquarium',focus:'colours',
  story:'The aquarium glows with jellyfish and fish in every colour. Mika names them for you and tests you, one tank at a time.',
- note:{title:'Colours',html:"<p><b>あか</b> red, <b>あお</b> blue, <b>しろ</b> white, <b>くろ</b> black, <b>きいろ</b> yellow, <b>みどり</b> green, <b>ちゃいろ</b> brown, <b>ピンク</b> pink. Four of them also have an い-adjective form: <b>あかい</b>, <b>あおい</b>, <b>しろい</b>, <b>くろい</b>: <b>あかい かばん</b>. Others need <b>の</b>: <b>みどりの かばん</b>.</p>"},
+ note:{title:'Colours',html:"<p><b>あか</b> red, <b>あお</b> blue, <b>しろ</b> white, <b>くろ</b> black, <b>きいろ</b> yellow, <b>みどり</b> green, <b>ちゃいろ</b> brown, <b>ピンク</b> pink. Some colours also have an い-adjective form: <b>あかい</b>, <b>あおい</b>, <b>しろい</b>, <b>くろい</b>, <b>きいろい</b>, <b>ちゃいろい</b>: <b>あかい かばん</b>. <b>みどり</b> and <b>ピンク</b> need <b>の</b>: <b>みどりの かばん</b>.</p>"},
  teaser:'One jellyfish looks like it has a head. Mika says that is a good way to learn the next words. Tomorrow: body parts.'},
 51:{title:'Head, Hand, Foot',place:'A small clinic in Kamakura',focus:'body words and いたい',
  story:'You pulled something on the trail. A doctor looks at your ankle and asks where it hurts. Mika waits outside, grinning.',
@@ -654,7 +656,7 @@ const KAMA_DAYS={
  teaser:'You choose the cheaper pair and Mika says it is the right choice. Tomorrow: plans.'},
 57:{title:'Weekend Plans',place:'A cafe on the hill',focus:'よてい, adjectives for opinions',
  story:'Mika asks what you are doing next weekend. You have nothing booked and an itinerary in your head. You find you can say what is fun and what is boring.',
- note:{title:'Plans and opinions',html:"<p><b>しゅうまつの よていは なんですか。</b> What are your plans for the weekend? <b>ひまです。</b> I am free. <b>いそがしいです。</b> I am busy. Opinions: <b>たのしい</b> fun, <b>つまらない</b> boring, <b>むずかしい</b> difficult, <b>やさしい</b> easy, <b>おもしろい</b> interesting. <b>〜でしょう</b> is isn't it, and <b>そうですね</b> is a friendly agreement.</p>"},
+ note:{title:'Plans and opinions',html:"<p><b>しゅうまつの よていは なんですか。</b> What are your plans for the weekend? <b>ひまです。</b> I am free. <b>いそがしいです。</b> I am busy. Opinions: <b>たのしい</b> fun, <b>つまらない</b> boring, <b>むずかしい</b> difficult, <b>やさしい</b> easy, <b>おもしろい</b> interesting. <b>〜でしょう</b> asks for agreement, like isn't it?, and <b>そうですね</b> is a friendly agreement.</p>"},
  teaser:'Mika says there is a festival tonight in Kamakura. Tomorrow: festivals and seasons.'},
 58:{title:'The Festival',place:'Tsurugaoka Hachimangū',focus:'festival and season words',
  story:'Lanterns light the long approach to the shrine. Stalls sell grilled corn and candy. Mika hands you a paper fan and teaches you three words for the evening.',
@@ -662,7 +664,7 @@ const KAMA_DAYS={
  teaser:'Mika says the best souvenir is a friend. You ask for her number. Tomorrow: personal details.'},
 59:{title:'Your Details',place:'A guesthouse lounge',focus:'じゅうしょ, でんわばんごう, なんさい',
  story:'You trade contact details with a table of travellers. Everyone does it differently. You give your ライン and promise to write.',
- note:{title:'Asking for details',html:"<p><b>でんわばんごうは なんばんですか。</b> What is your phone number? Say numbers one by one. <b>じゅうしょ</b> address, <b>ライン</b> LINE, <b>アドレス</b> email address. <b>おいくつですか。</b> or <b>なんさいですか。</b> asks age, but is considered rude with older people. <b>たんじょうびは いつですか。</b> When is your birthday?</p>"},
+ note:{title:'Asking for details',html:"<p><b>でんわばんごうは なんばんですか。</b> What is your phone number? Say numbers one by one. <b>じゅうしょ</b> address, <b>ライン</b> LINE, <b>アドレス</b> email address. <b>おいくつですか。</b> is the polite way to ask age, and <b>なんさいですか。</b> is blunter. Asking an adult their age can still be rude, so be careful. <b>たんじょうびは いつですか。</b> When is your birthday?</p>"},
  teaser:'Mika says tomorrow she has a surprise for your last day in Kamakura. Tomorrow: the finale.'},
 60:{title:'The Last Night in Kamakura',place:'Zaimokuza beach at dusk',focus:'past tense thanks and goodbyes',
  story:'The sun sets over Mt Fuji across the bay. Mika has something to tell you. You have thirty days of sentences behind you and one more sentence to say: thank you for everything.',
@@ -679,7 +681,7 @@ const KANJI_RAW=[
  [62,'四','four','シ','よん, よ(っつ)','A box with two little legs: four walls and the legs.',[['四','よん','yon','four'],['四つ','よっつ','yottsu','four (things)']]],
  [62,'五','five','ゴ','いつ(つ)','A flat top, a bend and a flat base: it looks like a 5.',[['五','ご','go','five'],['五つ','いつつ','itsutsu','five (things)']]],
  [62,'六','six','ロク','む(っつ)','A little hat on two legs, striding: six.',[['六','ろく','roku','six'],['六つ','むっつ','muttsu','six (things)']]],
- [63,'七','seven','シチ, ナナ','なな(つ)','A 7 shape with a short cross stroke: seven.',[['七','なな','nana','seven'],['七つ','ななつ','nanatsu','seven (things)']]],
+ [63,'七','seven','シチ','なな(つ)','A 7 shape with a short cross stroke: seven.',[['七','なな','nana','seven'],['七つ','ななつ','nanatsu','seven (things)']]],
  [63,'八','eight','ハチ','や(っつ)','Two strokes spreading apart, like the slopes of a hill: eight.',[['八','はち','hachi','eight'],['八つ','やっつ','yattsu','eight (things)']]],
  [63,'九','nine','キュウ, ク','ここの(つ)','A bent hook on a stroke: it curls like a 9 with a tail.',[['九','きゅう','kyū','nine'],['九つ','ここのつ','kokonotsu','nine (things)']]],
  [63,'十','ten','ジュウ','とお','A cross: ten fingers crossing.',[['十','じゅう','jū','ten'],['十','とお','tō','ten (things)']]],
@@ -701,7 +703,7 @@ const KANJI_RAW=[
  [69,'小','small','ショウ','ちい(さい), こ, お','A small thing with two tiny pieces falling away: small.',[['小さい','ちいさい','chiisai','small']]],
  [69,'中','middle, inside','チュウ','なか','A line cutting through the middle of a box.',[['中','なか','naka','middle, inside']]],
  [70,'上','up, above','ジョウ','うえ, あ(げる)','A short stroke above a long line: up.',[['上','うえ','ue','above, on top'],['上手','じょうず','jōzu','skilful']]],
- [70,'下','down, below','カ, ゲ','した, くだ(さい)','A short stroke below a long line: down.',[['下','した','shita','below, under'],['下手','へた','heta','unskilful']]],
+ [70,'下','down, below','カ, ゲ','した, くだ(さる), さ(げる)','A short stroke below a long line: down.',[['下','した','shita','below, under'],['下手','へた','heta','unskilful']]],
  [71,'山','mountain','サン','やま','Three peaks: a mountain.',[['山','やま','yama','mountain'],['山口','やまぐち','yamaguchi','Yamaguchi (a name, a city)']]],
  [71,'川','river','セン','かわ','Three streams of a river flowing down.',[['川','かわ','kawa','river'],['小川','おがわ','ogawa','small stream']]],
  [72,'本','book, origin','ホン','もと','A tree 木 with a mark at its root: the origin, and a book.',[['本','ほん','hon','book'],['日本','にほん','nihon','Japan']]],
@@ -747,7 +749,7 @@ const HAKONE_WORDS=[
  [81,'おふろ','ofuro','bath'],[81,'ゆ','yu','hot water'],[81,'ゆかた','yukata','light cotton kimono'],[81,'はいります','hairimasu','enter, get in'],[81,'ぬぎます','nugimasu','take off (clothes)'],[81,'あらいます','araimasu','wash'],
  [82,'りょかん','ryokan','Japanese inn'],[82,'へや','heya','room'],[82,'ふとん','futon','futon bedding'],[82,'かぎ','kagi','key (for a lock)'],[82,'よやく','yoyaku','reservation'],[82,'たたみ','tatami','tatami mat'],[82,'ようこそ','yōkoso','welcome'],
  [83,'ケーブルカー','kēburukā','cable car'],[83,'けしき','keshiki','scenery'],[83,'ふじさん','fujisan','Mt Fuji'],[83,'こわい','kowai','scary'],[83,'のります','norimasu','ride, get on'],[83,'おります','orimasu','get off'],
- [84,'ゆうびんきょく','yūbinkyoku','post office'],[84,'はがき','hagaki','postcard'],[84,'きって','kitte','stamp'],[84,'てがみ','tegami','letter'],[84,'おくります','okurimasu','send'],[84,'みずうみ','mizūmi','lake'],
+ [84,'ゆうびんきょく','yūbinkyoku','post office'],[84,'はがき','hagaki','postcard'],[84,'きって','kitte','stamp'],[84,'てがみ','tegami','letter'],[84,'おくります','okurimasu','send'],[84,'みずうみ','mizuumi','lake'],
  [85,'くろたまご','kurotamago','black egg (boiled in the hot springs)'],[85,'けむり','kemuri','smoke'],[85,'におい','nioi','smell'],[85,'あぶない','abunai','dangerous'],[85,'ゆげ','yuge','steam'],[85,'さわります','sawarimasu','touch'],
  [86,'とりい','torii','torii gate'],[86,'おまいり','omairi','visiting a shrine'],[86,'おみくじ','omikuji','paper fortune'],[86,'ねがいます','negaimasu','wish, request'],[86,'いのります','inorimasu','pray'],[86,'えま','ema','wooden wish plaque'],
  [87,'びじゅつかん','bijutsukan','art museum'],[87,'ちょうこく','chōkoku','sculpture'],[87,'え','e','picture'],[87,'アート','āto','art'],[87,'つくります','tsukurimasu','make'],[87,'うつくしい','utsukushii','beautiful'],[87,'おもいます','omoimasu','think'],
@@ -760,7 +762,7 @@ const HAKONE_GRAMMAR=[[81,'から'],[81,'ないで'],[82,'ありがとう'],[83,
 KJ_ALLWORDS.forEach(w=>{HAKONE_GRAMMAR.push([w.day,w.k]);});
 
 const HAKONE_DAYS={
-61:{title:'Ropeway Above the Valley',place:'Hakone-Yumoto Station',focus:'the first kanji: 一 二 三',
+61:{title:'One, Two, Three',place:'Hakone-Yumoto Station',focus:'the first kanji: 一 二 三',
  story:'The Odakyu train climbs from the coast into the hills, and the station signs change. For the first time the names are not in kana at all. Mika nods: Today you meet the third script, one stroke at a time.',
  note:{title:'What is a kanji?',html:"<p><b>Kanji</b> are characters borrowed from Chinese. Each one has a meaning, and most have more than one reading. The <b>kun</b> reading is the native Japanese word: <b>ひと</b>. The <b>on</b> reading is the Chinese-derived sound, used inside compounds: <b>いち</b>. You do not memorise them apart from words. Learn each kanji with a few words, and with a picture or story, and you will remember it.</p><p class='muted'>Tabi shows the stroke order. Trace it each time, because writing is what makes kanji stick.</p>"},
  teaser:'The kanji on the ticket gate say something about the number of people. Tomorrow: four, five and six.'},
@@ -805,7 +807,7 @@ const HAKONE_DAYS={
  note:null,
  teaser:'The owner asks where you study. Tomorrow: book and study.'},
 72:{title:'Books and Study',place:'A bookshop in Hakone',focus:'本 学 生',
- story:'The bookshop smells of paper and tea. The owner points at your textbook: 日本語. You can read three of its four characters.',
+ story:'The bookshop smells of paper and tea. The owner points at your textbook: 日本語. You can read two of its three characters.',
  note:{title:'Compounds',html:"<p>When two kanji join, you usually use the on readings: <b>学生</b> <b>がくせい</b>, <b>大学</b> <b>だいがく</b>, <b>日本</b> <b>にほん</b>. When a kanji stands alone, you often use the kun reading: <b>山</b> <b>やま</b>. It is not a perfect rule, but it is a helpful bet.</p>"},
  teaser:'The owner recommends a teacher in Tokyo and talks about the year. Tomorrow: before, year and yen.'},
 73:{title:'Teacher, Year, Yen',place:'A Hakone gift shop',focus:'先 年 円',
@@ -841,17 +843,17 @@ const HAKONE_DAYS={
  note:null,
  teaser:'The last kanji of the region gets you home. Tomorrow: back in Hakone, a bath at the inn.'},
 81:{title:'The Bath at the Inn',place:'A ryokan bath',focus:'から, ないで ください',
- story:'The ryokan has an outdoor bath open to the mountain air. A card by the door lists etiquette in four languages. Mika grins: wash first, then soak, and do not put the towel in the water.',
+ story:'You arrive at the ryokan early, and the owner says to bathe first and check in after. The inn has an outdoor bath open to the mountain air. A card by the door lists etiquette in four languages. Mika grins: wash first, then soak, and do not put the towel in the water.',
  note:{title:'から and ないで ください',html:"<p><b>から</b> after a sentence gives a reason: <b>あつい ですから、みずを のみます。</b> It is hot, so I drink water. To say please do not, use the plain negative plus <b>ないで ください</b>: <b>しゃしんを とらないで ください。</b> Please do not take photos. <b>たべないで ください</b> do not eat, <b>みないで ください</b> do not look.</p>"},
- teaser:'After the bath you put on a yukata and walk down the corridor to your room. Tomorrow: the ryokan.'},
+ teaser:'After the bath you put on a yukata and walk to the front desk to check in. Tomorrow: the ryokan.'},
 82:{title:'At the Ryokan',place:'A traditional inn',focus:'room and booking words',
- story:'A woman in a kimono bows on the step and says ようこそ. Your room has tatami floors, paper doors and futons ready to unroll.',
+ story:'Fresh from the bath, you go to the desk. A woman in a kimono bows and says ようこそ. Your room has tatami floors, paper doors and futons ready to unroll.',
  note:{title:'ようこそ and おねがいします',html:"<p><b>ようこそ</b> means welcome. Check in with <b>よやくを して います</b>, I have a reservation. Ask for something with <b>〜を おねがいします</b>: <b>かぎを おねがいします。</b> The key, please.</p>"},
- teaser:'The woman says there is a cable car tomorrow that goes over the volcanic valley. Tomorrow: the cable car.'},
-83:{title:'The Ropeway',place:'Hakone Ropeway',focus:'が (but), そして, のります',
- story:'The cable car glides above the steaming valley. Mika points: fuji-san on the left, the valley below, the lake behind you. She says it is scary, but beautiful.',
+ teaser:'The woman says a cable car runs up the mountain from just down the road. Tomorrow: the cable car.'},
+83:{title:'The Cable Car',place:'Hakone Tozan Cable Car',focus:'が (but), そして, のります',
+ story:'The cable car climbs the steep mountain slope. Mika points out of the window: on a clear day you can see fuji-san, with the valley below and the lake far behind. She says the slope is scary, but beautiful.',
  note:{title:'が and そして',html:"<p><b>が</b> at the end of a clause means but: <b>こわいですが、きれいです。</b> It is scary, but beautiful. <b>そして</b> means and then, or and also: <b>ケーブルカーに のります。そして けしきを みます。</b> Note: <b>に のります</b> for riding.</p>"},
- teaser:'The cable car stops at a valley that smells of eggs. Tomorrow: Owakudani.'},
+ teaser:'Back in town you decide to send a postcard home. Tomorrow: a postcard.'},
 84:{title:'A Postcard',place:'A post office in Hakone',focus:'もう, まだ',
  story:'A small post office near the lake sells special postcards. You decide to write one and need to ask whether it will arrive soon.',
  note:{title:'もう and まだ',html:"<p><b>もう</b> means already: <b>もう おくりましたか。</b> Have you sent it already? The answer: <b>はい、もう おくりました。</b> or <b>いいえ、まだです。</b> No, not yet. <b>まだ</b> means not yet or still. A letter is <b>てがみ</b>, a postcard <b>はがき</b>, a stamp <b>きって</b>.</p>"},
@@ -888,14 +890,14 @@ const NAGOYA_KANJI_RAW=[
  [91,'時','time, o\'clock','ジ','とき','The sun 日 beside a temple 寺: temple bells once told the time.',[['時','とき','toki','time, when'],['一時','いちじ','ichiji','1 o\'clock'],['三時','さんじ','sanji','3 o\'clock'],['四時','よじ','yoji','4 o\'clock'],['七時','しちじ','shichiji','7 o\'clock'],['九時','くじ','kuji','9 o\'clock'],['十二時','じゅうにじ','jūniji','12 o\'clock']]],
  [91,'分','minute, part','フン, ブン','わ(かる)','A blade 刀 splitting something in two 八: to divide, a part, a minute.',[['一分','いっぷん','ippun','one minute'],['二分','にふん','nifun','two minutes'],['三分','さんぷん','sanpun','three minutes'],['五分','ごふん','gofun','five minutes'],['十分','じゅっぷん','juppun','ten minutes'],['十五分','じゅうごふん','jūgofun','fifteen minutes'],['分かる','わかる','wakaru','understand'],['分かります','わかります','wakarimasu','understand (polite)']]],
  [91,'半','half','ハン','なか(ば)','A line splitting a shape into two equal halves.',[['半','はん','han','half'],['三時半','さんじはん','sanjihan','3:30'],['半分','はんぶん','hanbun','half, half of it'],['半年','はんとし','hantoshi','half a year']]],
- [92,'白','white','ハク','しろ(い)','A sun 日 with a ray on top: bright white.',[['白い','しろい','shiroi','white'],['白','しろ','shiro','white (the colour)']]],
+ [92,'白','white','ハク','しろ(い)','A sun 日 with a ray on top: bright white. (A memory picture, not the real origin.)',[['白い','しろい','shiroi','white'],['白','しろ','shiro','white (the colour)']]],
  [92,'赤','red','セキ','あか(い)','Earth 土 over fire 火: glowing red ground.',[['赤い','あかい','akai','red'],['赤','あか','aka','red (the colour)']]],
  [92,'青','blue, green','セイ','あお(い)','Young growth above a clear pool: fresh blue-green.',[['青い','あおい','aoi','blue'],['青','あお','ao','blue (the colour)']]],
  [93,'黒','black','コク','くろ(い)','A stove with soot rising over the flames: black.',[['黒い','くろい','kuroi','black'],['黒','くろ','kuro','black (the colour)']]],
  [93,'色','colour','ショク, シキ','いろ','A figure bending over a figure: a face flushing with colour.',[['色','いろ','iro','colour']]],
  [94,'名','name','メイ','な','Evening 夕 and a mouth 口: in the dark you call out your name.',[['名','な','na','name'],['名前','なまえ','namae','name'],['名古屋','なごや','nagoya','Nagoya']]],
  [94,'古','old','コ','ふる(い)','Ten 十 mouths 口: a story told through many generations.',[['古い','ふるい','furui','old (things)'],['名古屋','なごや','nagoya','Nagoya']]],
- [94,'屋','shop, roof','オク','や','A roof over a person: a house, a shop.',[['本屋','ほんや','honya','bookshop'],['パン屋','ぱんや','panya','bakery'],['名古屋','なごや','nagoya','Nagoya']]],
+ [94,'屋','shop, roof','オク','や','A roof-like top over 至 (arrive): a building where people arrive, a shop.',[['本屋','ほんや','honya','bookshop'],['パン屋','ぱんや','panya','bakery'],['名古屋','なごや','nagoya','Nagoya']]],
  [95,'東','east','トウ','ひがし','The sun 日 rising behind a tree 木: the east.',[['東','ひがし','higashi','east'],['東口','ひがしぐち','higashiguchi','east exit']]],
  [95,'西','west','セイ, サイ','にし','A bird settling in its nest as the sun goes down: the west.',[['西','にし','nishi','west'],['西口','にしぐち','nishiguchi','west exit']]],
  [96,'南','south','ナン','みなみ','A shelter with a plant growing toward the warm side: south.',[['南','みなみ','minami','south'],['南口','みなみぐち','minamiguchi','south exit']]],
@@ -934,9 +936,11 @@ const CONJ_A={'う':'わ','く':'か','ぐ':'が','す':'さ','つ':'た','ぬ':
 const CONJ_E={'う':'え','く':'け','ぐ':'げ','す':'せ','つ':'て','ぬ':'ね','ぶ':'べ','む':'め','る':'れ'};
 const CONJ_O={'う':'お','く':'こ','ぐ':'ご','す':'そ','つ':'と','ぬ':'の','ぶ':'ぼ','む':'も','る':'ろ'};
 const CONJ_T={'う':'って','つ':'って','る':'って','む':'んで','ぶ':'んで','ぬ':'んで','く':'いて','ぐ':'いで','す':'して'};
+/* verbs whose potential / passive / causative / volitional forms are rare or unnatural: not taught or generated */
+const NO_PCV=['わかる','はじまる','くれる','おくれる','おもう','できる','ある','いる'];
 function conjugate(d,g){
   const o={dict:d};
-  if(g==='2'){const s=d.slice(0,-1);Object.assign(o,{stem:s,masu:s+'ます',nai:s+'ない',ta:s+'た',te:s+'て',pot:s+'られる',vol:s+'よう',pas:s+'られる',cau:s+'させる',ba:s+'れば'});if(d==='いる'){delete o.pot;delete o.pas;delete o.cau;}}
+  if(g==='2'){const s=d.slice(0,-1);Object.assign(o,{stem:s,masu:s+'ます',nai:s+'ない',ta:s+'た',te:s+'て',pot:s+'られる',vol:s+'よう',pas:s+'られる',cau:s+'させる',ba:s+'れば'});if(d==='いる'){delete o.pot;delete o.pas;delete o.cau;}if(NO_PCV.includes(d)){delete o.pot;delete o.pas;delete o.cau;delete o.vol;}}
   else if(g==='3'){
     if(d.endsWith('くる')){const p=d.slice(0,-2);Object.assign(o,{stem:p+'き',masu:p+'きます',nai:p+'こない',ta:p+'きた',te:p+'きて',pot:p+'こられる',vol:p+'こよう',pas:p+'こられる',cau:p+'こさせる',ba:p+'くれば'});}
     else{const p=d.slice(0,-2);Object.assign(o,{stem:p+'し',masu:p+'します',nai:p+'しない',ta:p+'した',te:p+'して',pot:p+'できる',vol:p+'しよう',pas:p+'される',cau:p+'させる',ba:p+'すれば'});}
@@ -944,7 +948,7 @@ function conjugate(d,g){
     const l=d.slice(-1),s=d.slice(0,-1);
     const I=CONJ_I,A=CONJ_A,T=CONJ_T;
     let te=s+T[l];if(d==='いく')te='いって';
-    o.stem=s+I[l];o.masu=s+I[l]+'ます';o.nai=d==='ある'?'ない':s+A[l]+'ない';o.te=te;o.ta=te.slice(0,-1)+(te.endsWith('て')?'た':'だ');o.ba=d==='ある'?'あれば':s+CONJ_E[l]+'ば';if(d!=='ある'){o.pot=s+CONJ_E[l]+'る';o.vol=s+CONJ_O[l]+'う';o.pas=s+CONJ_A[l]+'れる';o.cau=s+CONJ_A[l]+'せる';}
+    o.stem=s+I[l];o.masu=s+I[l]+'ます';o.nai=d==='ある'?'ない':s+A[l]+'ない';o.te=te;o.ta=te.slice(0,-1)+(te.endsWith('て')?'た':'だ');o.ba=d==='ある'?'あれば':s+CONJ_E[l]+'ば';if(d!=='ある'&&!NO_PCV.includes(d)){o.pot=s+CONJ_E[l]+'る';o.vol=s+CONJ_O[l]+'う';o.pas=s+CONJ_A[l]+'れる';o.cau=s+CONJ_A[l]+'せる';}
   }
   o.nakatta=o.nai.slice(0,-1)+'かった';
   return o;
@@ -993,7 +997,8 @@ genForms(NAGOYA_WORDS);
 const NAGOYA_GRAMMAR=[[113,'こと'],[113,'できます'],[113,'できません'],[114,'こと'],[114,'ありません'],[114,'ありますか'],[115,'つもり'],[115,'つもりです'],[117,'ので'],[117,'から'],[117,'どうして'],[118,'と'],[118,'いいます'],[118,'いいました'],[119,'だ'],[119,'よ'],[119,'ね'],[119,'でしょう']];
 VERBS.forEach(v=>{
   const d=v.day,m=v.masu.slice(0,-2);
-  NAGOYA_GRAMMAR.push([d,v.masu],[d,m+'ません'],[d,m+'ました'],[d,m+'ましょう'],[d,m+'ませんか']);
+  NAGOYA_GRAMMAR.push([d,v.masu],[d,m+'ません'],[d,m+'ました'],[d,m+'ませんか']);
+  if(!NO_PCV.includes(v.d))NAGOYA_GRAMMAR.push([d,m+'ましょう']);
   NAGOYA_GRAMMAR.push([Math.max(d,110),v.nai],[Math.max(d,111),v.ta],[Math.max(d,111),v.nakatta],[Math.max(d,112),v.te],[Math.max(d,116),v.te+'から'],[Math.max(d,116),v.stem+'ながら']);
 });
 KJ_ALLWORDS.filter(w=>w.day>=91).forEach(w=>{NAGOYA_GRAMMAR.push([w.day,w.k]);});
@@ -1010,7 +1015,7 @@ const NAGOYA_DAYS={
  note:{title:'Colours, kanji and kana',html:"<p><b>白い</b>, <b>赤い</b>, <b>青い</b> are い-adjectives, so the い stays in kana: <b>しろい でんしゃ</b> a white train. Without い they are nouns: <b>あか</b> red. <b>あお</b> covers blue and, traditionally, some greens: a green traffic light is <b>あお</b>.</p>"},
  teaser:'Mika points to a roof across the city that gleams gold. Tomorrow: the castle.'},
 93:{title:'The Golden Shachihoko',place:'Nagoya Castle',focus:'黒 色: black and colour',
- story:'On the roof of Nagoya Castle two golden shachihoko, creatures with a tiger head and a fish tail, look out over the city. The walls are dark, the roof is green, and the fish are gold.',
+ story:'On the roof of Nagoya Castle two golden shachihoko, creatures with a tiger head and a fish tail, look out over the city. The walls are white, the roof is green, and the fish are gold.',
  note:null,
  teaser:'On the way down you pass a sign with the name of the city in kanji. Tomorrow: Nagoya.'},
 94:{title:'What Is It Called?',place:'Nagoya Station, Meieki',focus:'名 古 屋: names and Nagoya',
@@ -1023,7 +1028,7 @@ const NAGOYA_DAYS={
  teaser:'You are almost lost, which is part of the plan. Tomorrow: south and north.'},
 96:{title:'South and North',place:'A crossing near Osu Kannon',focus:'南 北: all four directions',
  story:'Mika turns you slowly around: 東, 西, 南, 北. On a station map the exits are named after them: 南口, 北口. Now you can read them without asking.',
- note:{title:'The four directions',html:"<p><b>東 ひがし</b> east, <b>西 にし</b> west, <b>南 みなみ</b> south, <b>北 きた</b> north. Japanese puts east first: <b>東西南北</b> (tōzai nanboku). Station exits: <b>東口</b> ひがしぐち, <b>西口</b> にしぐち, <b>南口</b> みなみぐち, <b>北口</b> きたぐち.</p>"},
+ note:{title:'The four directions',html:"<p><b>東 ひがし</b> east, <b>西 にし</b> west, <b>南 みなみ</b> south, <b>北 きた</b> north. In the set phrase, east comes first: <b>東西南北</b> (tōzai nanboku). Station exits: <b>東口</b> ひがしぐち, <b>西口</b> にしぐち, <b>南口</b> みなみぐち, <b>北口</b> きたぐち.</p>"},
  teaser:'A temple appears at the end of the arcade. Tomorrow: in and out.'},
 97:{title:'Entrance, Exit',place:'Osu Kannon temple',focus:'出 入: 出口 and 入口',
  story:'The temple has one 入口 and one 出口, and a sign for each. These two are the most useful signs in Japan, and the kanji are simple.',
@@ -1067,14 +1072,14 @@ const NAGOYA_DAYS={
  teaser:'Tomorrow the kanji stop for a while. Mika says the next thing is the way Japanese really works: the verb.'},
 107:{title:'The Dictionary Form: る-verbs',place:'A glass-roofed plaza in Sakae',focus:'plain forms: る-verbs',
  story:'Mika says: so far you speak politely. Today you meet the other layer of the language: the plain form, the one in dictionaries and in casual speech.',
- note:{title:'The dictionary form',html:"<p>You know the polite <b>ます</b> form. The dictionary form is the plain one. For <b>る-verbs</b> (ichidan), drop <b>ます</b> and add <b>る</b>: <b>たべます → たべる</b>, <b>みます → みる</b>, <b>おきます → おきる</b>. These always end in <b>いる</b> or <b>える</b>, but not every verb that ends that way is a る-verb. <b>かえる</b> (go home) is not: it belongs to tomorrow's group.</p>"},
+ note:{title:'The dictionary form',html:"<p>You know the polite <b>ます</b> form. The dictionary form is the plain one. For <b>る-verbs</b> (ichidan), drop <b>ます</b> and add <b>る</b>: <b>たべます → たべる</b>, <b>みます → みる</b>, <b>おきます → おきる</b>. These always end in <b>いる</b> or <b>える</b>, but not every verb that ends that way is a る-verb. <b>かえる</b> (go home) is not: it belongs to the other group, which you meet on Day 109.</p>"},
  teaser:'Mika asks whether you can find the other group. Tomorrow: う-verbs.'},
 108:{title:'The Dictionary Form: う-verbs',place:'A quiet street in Sakae',focus:'plain forms: う-verbs I',
  story:'Most Japanese verbs are in the other group. Mika writes five of them on a napkin and asks you to find what they have in common: the last sound moves one place.',
  note:{title:'う-verbs (godan)',html:"<p>The い-sound before ます moves to the matching う-sound in the same row: <b>き → く</b> かきます → かく; <b>ぎ → ぐ</b> およぎます → およぐ; <b>し → す</b> はなします → はなす; <b>い → う</b> かいます → かう, あいます → あう. Tomorrow you meet the rest.</p>"},
  teaser:'Mika says there are four more endings. Tomorrow: つ, る, む, ぶ.'},
 109:{title:'More う-verbs, and Two Irregulars',place:'A cafe by the river in Sakae',focus:'plain forms: う-verbs II, する, くる',
- story:'Mika lines up the rest: wait, ride, drink, play. Then she writes two verbs that follow no pattern at all: する and くる. They are the most common verbs in the language, and the only irregular ones.',
+ story:'Mika lines up the rest: wait, ride, drink, play. Then she writes two verbs that follow no pattern at all: する and くる. They are the most common verbs in the language, and the only truly irregular ones. A couple of others bend the rules a little: ある becomes ない, and いく becomes いって.',
  note:{title:'The rest, and the two irregulars',html:"<p><b>ち → つ</b> まちます → まつ. <b>り → る</b> のります → のる. <b>み → む</b> のみます → のむ. <b>び → ぶ</b> あそびます → あそぶ. Irregular: <b>します → する</b>, <b>きます → くる</b>, <b>べんきょうします → べんきょうする</b>. Beware: <b>かえる</b> and <b>はいる</b> look like る-verbs but are う-verbs, so memorise them.</p>"},
  teaser:'Tomorrow you make the negative, and the cutlets are red with miso.'},
 110:{title:'The ない Form',place:'A miso katsu restaurant',focus:'ない form: plain negative',
@@ -1100,7 +1105,7 @@ const NAGOYA_DAYS={
 115:{title:'My Plan Is',place:'Noritake Garden',focus:'〜つもりです: intending to',
  story:'Plates, cups, and a factory where Nagoya porcelain is made. Mika asks what you plan to do tomorrow.',
  note:{title:'Plans: つもり',html:"<p>Dictionary form + <b>つもりです</b>: <b>あした きょうとへ いく つもりです。</b> I plan to go to Kyoto tomorrow. Negative uses the ない form: <b>いかない つもりです。</b> I plan not to go.</p>"},
- teaser:'The bus to Inuyama leaves early. Tomorrow: then, and while.'},
+ teaser:'The train to Inuyama leaves early. Tomorrow: then, and while.'},
 116:{title:'Then, and While',place:'Inuyama Castle town',focus:'〜てから, 〜ながら',
  story:'A small town with an old castle on a river. Mika suggests walking around, eating something on a stick, then climbing the keep.',
  note:{title:'After and while',html:"<p><b>〜てから</b> after doing: <b>ごはんを たべて から、でかけます。</b> After eating, I go out. <b>〜ながら</b> while doing: use the ます stem, <b>おんがくを ききながら あるきます。</b> I walk while listening to music. In both, the main action comes last.</p>"},
@@ -1120,7 +1125,7 @@ const NAGOYA_DAYS={
 120:{title:'Checkpoint at Nagoya Station',place:'Nagoya Station, the Shinkansen platform again',focus:'everything from Nagoya',
  story:'Back at the platform where you arrived thirty days ago. The same red trains and white shinkansen. Mika hands you a ticket for Kyoto. First, a checkpoint.',
  note:{title:'You have come a long way',html:"<p>One hundred and twenty days: both kana, over 670 words, 90 kanji and the plain form of verbs. This lesson is a long review of everything from Nagoya. It is a checkpoint made by Tabi, not an official JLPT test.</p>"},
- teaser:'The ticket says Kyoto, and a bullet train waits. Next region: Kyoto. (Coming in the next update.)'}
+ teaser:'The ticket says Kyoto, and a bullet train waits. Next region: Kyoto.'}
 };
 
 /* ================= KYOTO (Days 121-150): 31 more kanji, N4 patterns ================= */
@@ -1136,7 +1141,7 @@ const KYOTO_KANJI_RAW=[
  [125,'何','what','カ','なに, なん','A person 人 asking a question: what?',[['何','なに','nani','what'],['何時','なんじ','nanji','what time'],['何人','なんにん','nannin','how many people'],['何分','なんぷん','nanpun','how many minutes']]],
  [125,'毎','every','マイ','—','The same mother 母 doing the same thing: every day.',[['毎日','まいにち','mainichi','every day'],['毎年','まいとし','maitoshi','every year'],['毎月','まいつき','maitsuki','every month']]],
  [126,'朝','morning','チョウ','あさ','The sun 日 and the moon 月 at dawn: morning.',[['朝','あさ','asa','morning'],['毎朝','まいあさ','maiasa','every morning'],['朝ごはん','あさごはん','asagohan','breakfast']]],
- [126,'昼','noon, daytime','チュウ','ひる','The sun 日 high above its own shadow: midday.',[['昼','ひる','hiru','noon, daytime'],['昼ごはん','ひるごはん','hirugohan','lunch'],['昼休み','ひるやすみ','hiruyasumi','lunch break']]],
+ [126,'昼','noon, daytime','チュウ','ひる','尺 over the sun 日: the sun high overhead at midday.',[['昼','ひる','hiru','noon, daytime'],['昼ごはん','ひるごはん','hirugohan','lunch'],['昼休み','ひるやすみ','hiruyasumi','lunch break']]],
  [126,'夜','night','ヤ','よる','Someone under a roof as the evening falls: night.',[['夜','よる','yoru','night'],['今夜','こんや','konya','tonight']]],
  [127,'週','week','シュウ','—','Going all the way around once: a week.',[['今週','こんしゅう','konshū','this week'],['毎週','まいしゅう','maishū','every week'],['来週','らいしゅう','raishū','next week']]],
  [127,'間','interval, between','カン, ケン','あいだ, ま','The sun 日 shining through a gate 門: a gap, an interval.',[['時間','じかん','jikan','time, hours'],['一週間','いっしゅうかん','isshūkan','one week'],['間','あいだ','aida','between']]],
@@ -1236,7 +1241,7 @@ const KYOTO_DAYS={
  note:{title:'Time words',html:"<p><b>今週</b> こんしゅう this week, <b>来週</b> らいしゅう next week, <b>毎週</b> まいしゅう every week. <b>一週間</b> いっしゅうかん one week. <b>時間</b> じかん time, hours.</p>"},
  teaser:'The path ends at a hill with a wooden stage. Tomorrow: say and think.'},
 128:{title:'Make a Wish',place:'Kiyomizu-dera',focus:'言 思: say and think',
- story:'The wooden stage hangs over the hillside. Mika says to make a wish, and asks what you wished for. You learn to say and to think, the two verbs behind the next two weeks.',
+ story:'The wooden stage hangs over the hillside. Mika says to make a wish, and asks what you wished for. You learn to say and to think, two verbs that open up whole sentences.',
  note:null,
  teaser:'In the temple tea house a woman offers matcha. Tomorrow: know and use.'},
 129:{title:'The Tea Ceremony',place:'A tea house near Kiyomizu',focus:'知 使: know and use',
@@ -1285,11 +1290,11 @@ const KYOTO_DAYS={
  teaser:'Outside the sky has turned. Tomorrow: maybe.'},
 140:{title:'It Might Rain',place:'The garden of a Zen temple',focus:'でしょう, かもしれません',
  story:'Clouds pile up over the hill. Mika checks the forecast, and then looks at the sky. She says it will probably rain, but she is not sure.',
- note:{title:'Probably and maybe',html:"<p>Plain form + <b>でしょう</b> means probably: <b>あしたは あめでしょう。</b> Plain form + <b>かもしれません</b> means might: <b>あめが ふる かもしれません。</b> After a noun or な-adjective there is no だ: <b>あめかもしれません</b>, <b>しずかかもしれません</b>.</p>"},
+ note:{title:'Probably and maybe',html:"<p>Plain form + <b>でしょう</b> means probably: <b>あしたは あめでしょう。</b> After a noun or な-adjective there is no だ before でしょう either: <b>しずかでしょう</b>. Plain form + <b>かもしれません</b> means might: <b>あめが ふる かもしれません。</b> After a noun or な-adjective there is no だ: <b>あめかもしれません</b>, <b>しずかかもしれません</b>.</p>"},
  teaser:'A sweet shop appears, just in time. Tomorrow: it looks tasty.'},
 141:{title:'Looks Delicious',place:'A Kyoto sweet shop',focus:'〜そうです: looks like',
  story:'Yatsuhashi in every flavour, soft mochi, and sweet bean jelly cut into small bricks. Everything looks good, and Mika has a sentence for it.',
- note:{title:'Looks like: そう',html:"<p>い-adjective without い + <b>そう</b>: <b>おいしそうです。</b> It looks delicious. ます-stem + そう: <b>ふりそうです。</b> It looks like it will rain. Exception: <b>いい → よさそう</b>. Do not confuse with plain form + そうです, which means I heard that.</p>"},
+ note:{title:'Looks like: そう',html:"<p>い-adjective without い + <b>そう</b>: <b>おいしそうです。</b> It looks delicious. ます-stem + そう: <b>ふりそうです。</b> It looks like it will rain. Exceptions: <b>いい → よさそう</b> and <b>ない → なさそう</b>. な-adjectives drop な: <b>しずかそうです</b>. Do not confuse with plain form + そうです, which means I heard that.</p>"},
  teaser:'You can only eat so much. Tomorrow: deciding.'},
 142:{title:'I Decided To',place:'A Kyoto cafe',focus:'〜ことに します: deciding',
  story:'Over matcha, Mika asks whether you will keep studying after the trip. You do not have to answer yet, but you can practise how to say you decided.',
@@ -1297,8 +1302,8 @@ const KYOTO_DAYS={
  teaser:'Your bag is heavy and the trains are crowded. Tomorrow: when.'},
 143:{title:'When I Travel',place:'Kyoto Station coin lockers',focus:'〜とき: when',
  story:'The station is crowded. You put your luggage in a coin locker and keep your passport. Mika says: when you travel, always keep your passport with you.',
- note:{title:'When: とき',html:"<p>Plain form + <b>とき</b>: <b>りょこうする とき、パスポートを もって いきます。</b> When I travel, I take my passport. Past: <b>りょこうした とき</b>. Nouns need の: <b>やすみの とき</b>. な-adjectives need な: <b>ひまな とき</b>.</p>"},
- teaser:'The last tram leaves in five minutes. Tomorrow: if.'},
+ note:{title:'When: とき',html:"<p>Plain form + <b>とき</b>: <b>りょこうする とき、パスポートを もって いきます。</b> When I travel, I take my passport. <b>する とき</b> means when I am about to or while I do it, and <b>した とき</b> means after it has happened: <b>りょこうした とき</b> when I travelled. Nouns need の: <b>やすみの とき</b>. な-adjectives need な: <b>ひまな とき</b>.</p>"},
+ teaser:'The locker takes only coins and you have only notes. Tomorrow: if.'},
 144:{title:'If It Rains',place:'Kyoto Tower',focus:'〜たら: if, when',
  story:'From the tower you see the whole city: low roofs, temple groves, the mountains behind. Mika says that if the weather is fine tomorrow, you will visit one more place.',
  note:{title:'If: たら',html:"<p>た-form + <b>ら</b> means if or when: <b>あめが ふったら、いきません。</b> If it rains, we will not go. It works with adjectives too: <b>やすかったら、かいます。</b> If it is cheap, I will buy it.</p>"},
@@ -1317,7 +1322,7 @@ const KYOTO_DAYS={
  teaser:'You are hungry. Tomorrow: too much.'},
 148:{title:'Too Much Kaiseki',place:'A kaiseki restaurant',focus:'〜すぎます, 〜やすい, 〜にくい',
  story:'Kaiseki is a meal in many tiny courses. By the eighth you are full. The taste is light and delicate, and the chopsticks are thin and hard to use.',
- note:{title:'Too much, easy, hard',html:"<p>ます-stem + <b>すぎます</b>: <b>たべすぎました。</b> I ate too much. For い-adjectives drop い: <b>たかすぎます</b> too expensive. ます-stem + <b>やすい</b> easy to: <b>よみやすい</b>. ます-stem + <b>にくい</b> hard to: <b>あるきにくい</b>.</p>"},
+ note:{title:'Too much, easy, hard',html:"<p>ます-stem + <b>すぎます</b>: <b>たべすぎました。</b> I ate too much. For い-adjectives drop い: <b>たかすぎます</b> too expensive. Exceptions: <b>いい → よすぎる</b> and <b>ない → なさすぎる</b>. ます-stem + <b>やすい</b> easy to: <b>よみやすい</b>. ます-stem + <b>にくい</b> hard to: <b>あるきにくい</b>.</p>"},
  teaser:'The streets grow quiet. Tomorrow: a last evening.'},
 149:{title:'A Last Evening in Gion',place:'Gion at night',focus:'review: Kyoto patterns',
  story:'Paper lanterns come on along the street. Mika walks you through all the sentences you learned in Kyoto: can, should, must, maybe, when, if, let us.',
@@ -1326,40 +1331,40 @@ const KYOTO_DAYS={
 150:{title:'Checkpoint at Kyoto Station',place:'Kyoto Station',focus:'everything from Kyoto',
  story:'Back at the station where you arrived thirty days ago. Mika hands you a ticket for Osaka. First, a checkpoint.',
  note:{title:'Thirty days in Kyoto',html:"<p>One hundred and fifty days: over 770 words, 121 kanji with 270 kanji words, the main verb forms and the patterns of the N4 level. This is a checkpoint made by Tabi, not an official JLPT test.</p>"},
- teaser:'The ticket says Osaka, and the last region is waiting. (Osaka arrives in the next update.)'}
+ teaser:'The ticket says Osaka, and the last region is waiting. Next region: Osaka.'}
 };
 
 /* ================= OSAKA (Days 151-180): 32 more kanji, N4 patterns, mock N4 ================= */
 const OSAKA_KANJI_RAW=[
- [151,'阪','slope (Osaka)','ハン','さか','A mound 阝 and its opposite side 反: a slope. Used in the name Osaka.',[['大阪','おおさか','ōsaka','Osaka']]],
- [152,'味','taste','ミ','あじ','A mouth 口 that has not yet tasted 未: flavour.',[['味','あじ','aji','taste, flavour']]],
+ [151,'阪','slope (Osaka)','ハン','—','A mound 阝 and its opposite side 反: a slope. Used in the name Osaka.',[['大阪','おおさか','ōsaka','Osaka']]],
+ [152,'味','taste','ミ','あじ','A mouth 口 next to 未, which also gives the sound: flavour.',[['味','あじ','aji','taste, flavour']]],
  [152,'肉','meat','ニク','—','A slab of meat with the marbling lines inside.',[['肉','にく','niku','meat']]],
- [152,'魚','fish','ギョ','さかな','A fish with a head, a body, and fire 灬 below for the tail.',[['魚','さかな','sakana','fish'],['魚屋','さかなや','sakanaya','fish shop']]],
+ [152,'魚','fish','ギョ','さかな','A fish with a head, a body, and 灬 below for the tail.',[['魚','さかな','sakana','fish'],['魚屋','さかなや','sakanaya','fish shop']]],
  [153,'牛','cow','ギュウ','うし','A cow\'s head with two horns and a line down the face.',[['牛','うし','ushi','cow'],['牛肉','ぎゅうにく','gyūniku','beef']]],
  [153,'鳥','bird','チョウ','とり','A bird with a beak, an eye and a tail.',[['鳥','とり','tori','bird'],['鳥肉','とりにく','toriniku','chicken meat']]],
- [154,'野','field, plain','ヤ','の','A village 里 and a hand giving 予: open land.',[['野菜','やさい','yasai','vegetables']]],
+ [154,'野','field, plain','ヤ','の','A village 里 and 予, which also gives the sound: open land.',[['野菜','やさい','yasai','vegetables']]],
  [154,'菜','greens','サイ','な','Grass 艹 above something picked: leafy greens.',[['野菜','やさい','yasai','vegetables']]],
  [154,'茶','tea','チャ, サ','—','Grass 艹 above a person 人 and a tree 木: tea leaves.',[['お茶','おちゃ','ocha','tea'],['茶色','ちゃいろ','chairo','brown']]],
  [155,'地','ground, earth','チ, ジ','—','Earth 土 beside a snake 也: ground winding like a path.',[['地図','ちず','chizu','map'],['地下鉄','ちかてつ','chikatetsu','subway']]],
  [155,'鉄','iron','テツ','—','Metal 金 and a lost thing 失: heavy metal; trains run on iron.',[['地下鉄','ちかてつ','chikatetsu','subway'],['鉄','てつ','tetsu','iron']]],
  [155,'図','diagram, map','ズ, ト','はか(る)','A boundary 囗 and the lines drawn inside: a diagram.',[['地図','ちず','chizu','map']]],
- [156,'海','sea','カイ','うみ','Water 氵 and a mother 母: the sea is the mother of all water.',[['海','うみ','umi','sea'],['海外','かいがい','kaigai','overseas']]],
+ [156,'海','sea','カイ','うみ','Water 氵 plus 毎. Memory picture: the sea as the mother 母 of all water.',[['海','うみ','umi','sea'],['海外','かいがい','kaigai','overseas']]],
  [157,'花','flower','カ','はな','Grass 艹 that changes 化 into a blossom.',[['花','はな','hana','flower'],['花見','はなみ','hanami','cherry-blossom viewing'],['花屋','はなや','hanaya','flower shop']]],
  [157,'林','woods','リン','はやし','Two trees 木 side by side: woods.',[['林','はやし','hayashi','woods']]],
  [157,'森','forest','シン','もり','Three trees 木: a forest.',[['森','もり','mori','forest']]],
  [158,'春','spring','シュン','はる','The sun 日 warming plants coming up: spring.',[['春','はる','haru','spring'],['春休み','はるやすみ','haruyasumi','spring break']]],
- [158,'夏','summer','カ','なつ','A person under the strong sun: summer.',[['夏','なつ','natsu','summer'],['夏休み','なつやすみ','natsuyasumi','summer holiday']]],
+ [158,'夏','summer','カ','なつ','A bar on top, your own 自-like face and slow feet 夂: you trudge along in the summer heat. (A memory picture.)',[['夏','なつ','natsu','summer'],['夏休み','なつやすみ','natsuyasumi','summer holiday']]],
  [159,'秋','autumn','シュウ','あき','Grain 禾 and fire 火: the harvest and burning leaves.',[['秋','あき','aki','autumn']]],
  [159,'冬','winter','トウ','ふゆ','A season ending with two drops of ice: winter.',[['冬','ふゆ','fuyu','winter'],['冬休み','ふゆやすみ','fuyuyasumi','winter holiday']]],
- [160,'百','hundred','ヒャク','—','One 一 sun 白: a hundred.',[['百','ひゃく','hyaku','hundred'],['三百','さんびゃく','sanbyaku','three hundred'],['六百','ろっぴゃく','roppyaku','six hundred']]],
+ [160,'百','hundred','ヒャク','—','One 一 over white 白: a hundred.',[['百','ひゃく','hyaku','hundred'],['三百','さんびゃく','sanbyaku','three hundred'],['六百','ろっぴゃく','roppyaku','six hundred']]],
  [160,'千','thousand','セン','ち','A person with a single stroke: a thousand.',[['千','せん','sen','thousand'],['三千','さんぜん','sanzen','three thousand'],['千円','せんえん','sen\'en','1,000 yen']]],
- [160,'万','ten thousand','マン, バン','—','A symbol that came from a scorpion: countless, ten thousand.',[['一万','いちまん','ichiman','10,000'],['一万円','いちまんえん','ichimanen','10,000 yen'],['十万','じゅうまん','jūman','100,000']]],
+ [160,'万','ten thousand','マン, バン','—','The old form 萬 pictured a scorpion, a huge number. Today\'s 万 is a simplified shape: ten thousand.',[['一万','いちまん','ichiman','10,000'],['一万円','いちまんえん','ichimanen','10,000 yen'],['十万','じゅうまん','jūman','100,000']]],
  [161,'会','meet, meeting','カイ, エ','あ(う)','People gathering under a roof: a meeting.',[['会う','あう','au','meet'],['会います','あいます','aimasu','meet (polite)'],['会社','かいしゃ','kaisha','company']]],
  [161,'社','company, shrine','シャ','やしろ','The earth 土 and a sign 礻: the place of the gods, then a company.',[['会社','かいしゃ','kaisha','company']]],
  [162,'仕','serve','シ','つか(える)','A person 亻 and a samurai 士: someone who serves.',[['仕事','しごと','shigoto','work, job']]],
  [162,'事','matter, thing','ジ','こと','A hand holding a brush: a task, a matter.',[['仕事','しごと','shigoto','work, job'],['食事','しょくじ','shokuji','meal']]],
  [163,'私','I, private','シ','わたし','Grain 禾 held to oneself 厶: mine, private.',[['私','わたし','watashi','I, me'],['私たち','わたしたち','watashitachi','we, us']]],
- [164,'病','illness','ビョウ','や(む)','A sick person lying on a bed 疒 beside a flame 丙.',[['病気','びょうき','byōki','illness'],['病院','びょういん','byōin','hospital']]],
+ [164,'病','illness','ビョウ','や(む)','A sick person on a bed 疒; the 丙 inside only gives the sound.',[['病気','びょうき','byōki','illness'],['病院','びょういん','byōin','hospital']]],
  [164,'院','institution','イン','—','A hill 阝 and a complete 完 building: a hall, a hospital.',[['病院','びょういん','byōin','hospital']]],
  [165,'自','self','ジ, シ','みずか(ら)','A nose: when Japanese point to themselves, they point to the nose.',[['自分','じぶん','jibun','oneself'],['自動車','じどうしゃ','jidōsha','car, automobile']]],
  [165,'動','move','ドウ','うご(く)','Heavy 重 and strength 力: to move something.',[['動く','うごく','ugoku','move'],['自動車','じどうしゃ','jidōsha','car, automobile']]]
@@ -1369,7 +1374,7 @@ addKanji(OSAKA_KANJI_RAW);
 const OSAKA_WORDS=[
  [151,'おおさかじょう','ōsakajō','Osaka Castle'],[151,'ひでよし','hideyoshi','Hideyoshi (the warlord who built the castle)'],[151,'いしがき','ishigaki','stone wall'],[151,'あきんど','akindo','merchant'],
  [152,'たこやき','takoyaki','takoyaki, octopus balls'],[152,'おこのみやき','okonomiyaki','okonomiyaki, savoury pancake'],[152,'どうとんぼり','dōtonbori','Dotonbori'],[152,'くいだおれ','kuidaore','to ruin oneself by eating (Osaka motto)'],
- [153,'くしカツ','kushikatsu','skewered cutlets'],[153,'ふぐ','fugu','pufferfish'],[153,'かすうどん','kasu udon','kasu udon'],
+ [153,'くしカツ','kushikatsu','skewered cutlets'],[153,'ふぐ','fugu','pufferfish'],[153,'かすうどん','kasu udon','kasu udon (udon with fried beef-fat bits)'],
  [154,'ベジタリアン','bejitarian','vegetarian'],[154,'アレルギー','arerugī','allergy'],[154,'ていしょく','teishoku','set meal'],[154,'おかわり','okawari','a refill'],
  [155,'なんば','namba','Namba'],[155,'うめだ','umeda','Umeda'],[155,'しんさいばし','shinsaibashi','Shinsaibashi'],[155,'のりかえあんない','norikae annai','transfer guide'],
  [156,'かいゆうかん','kaiyūkan','Kaiyukan Aquarium'],[156,'かんらんしゃ','kanransha','Ferris wheel'],[156,'みなと','minato','port'],[156,'せんちょう','senchō','ship captain'],
@@ -1385,13 +1390,13 @@ const OSAKA_WORDS=[
  [166,'クラス','kurasu','class'],[166,'じゅぎょう','jugyō','lesson'],[166,'しけん','shiken','exam'],[166,'ごうかく','gōkaku','passing (an exam)'],
  [167,'じゅんび','junbi','preparation'],[167,'もくひょう','mokuhyō','objective'],[167,'けいかく','keikaku','plan'],[167,'どりょく','doryoku','effort'],
  [168,'かいさつ','kaisatsu','ticket gate'],[168,'じこくひょう','jikokuhyō','timetable'],[168,'ふつう','futsū','local train, ordinary'],[168,'きゅうこう','kyūkō','express train'],
- [169,'せつめい','setsumei','explanation'],[169,'ぎもん','gimon','doubt'],[169,'もんだい','mondai','problem, question'],[169,'かいとう','kaitō','reply'],
+ [169,'せつめい','setsumei','explanation'],[169,'ぎもん','gimon','question, doubt'],[169,'もんだい','mondai','problem, question'],[169,'かいとう','kaitō','answer, reply'],
  [170,'どろぼう','dorobō','thief'],[170,'さわぎ','sawagi','commotion'],[170,'けいかん','keikan','police officer'],[170,'こうばん','kōban','police box'],
  [171,'レシピ','reshipi','recipe'],[171,'あじみ','ajimi','tasting'],[171,'ざいりょう','zairyō','ingredients'],
  [172,'かしこまりました','kashikomarimashita','certainly (to a customer)'],[172,'おまたせしました','omatase shimashita','sorry to keep you waiting'],[172,'ごあんない','goannai','guidance (polite)'],
  [173,'こうかい','kōkai','regret'],[173,'ほうほう','hōhō','method'],[173,'かのうせい','kanōsei','possibility'],
  [174,'ふくざつ','fukuzatsu','complicated'],[174,'めんどう','mendō','trouble, bother'],[174,'ふべん','fuben','inconvenient'],
- [175,'そうしき','sōshiki','ceremony'],[175,'うわさ','uwasa','rumour'],[175,'ほうどう','hōdō','report'],
+ [175,'そうしき','sōshiki','funeral'],[175,'うわさ','uwasa','rumour'],[175,'ほうどう','hōdō','report'],
  [176,'おわび','owabi','apology'],[176,'ちゅうい','chūi','caution'],[176,'めいわく','meiwaku','trouble, nuisance'],
  [177,'ブログ','burogu','blog'],[177,'きじ','kiji','article'],[177,'ひょうげん','hyōgen','expression'],[177,'ぶんしょう','bunshō','text, composition'],
  [178,'もぎ','mogi','mock (test)'],[178,'せいかい','seikai','correct answer'],[178,'ふくしゅう','fukushū','review'],
@@ -1449,7 +1454,7 @@ const OSAKA_DAYS={
  teaser:'In a shop a price tag has four zeros. Tomorrow: hundreds, thousands, ten thousands.'},
 160:{title:'Big Numbers',place:'Shinsaibashi shopping street',focus:'百 千 万: hundred, thousand, ten thousand',
  story:'The price tags here are in the thousands and the tens of thousands. You learn to read yen the way a shop does.',
- note:{title:'Big numbers',html:"<p><b>百</b> ひゃく 100 (300 さんびゃく, 600 ろっぴゃく, 800 はっぴゃく). <b>千</b> せん 1,000 (3,000 さんぜん, 8,000 はっせん). <b>万</b> まん 10,000, and Japanese counts in groups of four zeros: <b>十万</b> 100,000, <b>百万</b> 1,000,000. <b>一万円</b> いちまんえん is 10,000 yen.</p>"},
+ note:{title:'Big numbers',html:"<p><b>百</b> ひゃく 100 (300 さんびゃく, 600 ろっぴゃく, 800 はっぴゃく). <b>千</b> せん 1,000 (3,000 さんぜん, 8,000 はっせん). <b>万</b> まん 10,000 (always said with a number: <b>一万</b> いちまん, never just まん), and Japanese counts in groups of four zeros: <b>十万</b> 100,000, <b>百万</b> 1,000,000. <b>一万円</b> いちまんえん is 10,000 yen.</p>"},
  teaser:'The shop owner asks where you work. Tomorrow: company.'},
 161:{title:'The Business Card',place:'A company reception in Umeda',focus:'会 社: meeting and company',
  story:'Mika\'s friend works at a company in Umeda and she wants you to meet her. People swap meishi with both hands. 会う, 会社: the kanji are on every sign here.',
@@ -1470,14 +1475,14 @@ const OSAKA_DAYS={
 165:{title:'By Yourself',place:'The hospital vending machines',focus:'自 動: self and move',
  story:'You are better and you walk out, and Mika points to a vending machine: 自動販売機, a machine that moves by itself. 自 and 動 are the last two kanji of the journey.',
  note:{title:'自動',html:"<p><b>自動</b> じどう means automatic, by itself. <b>自動車</b> じどうしゃ is a car, and <b>自分</b> じぶん is oneself.</p>"},
- teaser:'Tomorrow the kanji end, and the last grammar lessons begin.'},
+ teaser:'Tomorrow the last grammar lessons begin.'},
 166:{title:'Becoming Able',place:'A language school',focus:'〜ように なる: come to be able',
  story:'Mika enrolled you in a trial class. The teacher asks what you can do now that you could not do a hundred days ago.',
- note:{title:'ように なる',html:"<p>Potential form or dictionary form + <b>ように なりました</b> means you have come to be able to: <b>にほんごが はなせるように なりました。</b> I have become able to speak Japanese. <b>まいにち よむように なりました。</b> I have started reading every day.</p>"},
+ note:{title:'ように なる',html:"<p>Potential form + <b>ように なりました</b> means you have come to be able to: <b>にほんごが はなせるように なりました。</b> I have become able to speak Japanese. <b>まいにち よむように なりました。</b> I have started reading every day. (With the dictionary form it means a habit has come about, not an ability.)</p>"},
  teaser:'The teacher says the exam is not far away. Tomorrow: in order to.'},
 167:{title:'In Order To',place:'A study cafe',focus:'〜ために, 〜ように: purpose',
  story:'Studying for the exam, you need a plan. Mika asks what you are doing all this for.',
- note:{title:'ために and ように',html:"<p>Dictionary form + <b>ために</b> = in order to: <b>にほんへ いく ために、アルバイトを して います。</b> I work part-time in order to go to Japan. Nouns take の: <b>かぞくの ために</b>. <b>ように</b> is for results you cannot fully control: <b>わすれないように、メモを とります。</b> I take notes so that I won't forget.</p>"},
+ note:{title:'ために and ように',html:"<p>Dictionary form + <b>ために</b> = in order to: <b>にほんへ いく ために、アルバイトを して います。</b> I work part-time in order to go to Japan. Nouns take の: <b>かぞくの ために</b>. <b>ように</b> is used when the goal is a state or result rather than something you do directly, and often with the potential or negative: <b>わすれないように、メモを とります。</b> I take notes so that I won't forget.</p>"},
  teaser:'On the way out you check the train. Tomorrow: should be.'},
 168:{title:'It Should Come',place:'Umeda Station',focus:'〜はずです: should be',
  story:'The board says the express will arrive at five past. Mika checks the timetable and says it should be here soon.',
@@ -1489,7 +1494,7 @@ const OSAKA_DAYS={
  teaser:'A guard hurries past. Tomorrow: something happens.'},
 170:{title:'It Happened to Me',place:'A crowded street',focus:'passive form',
  story:'Someone nearby shouts that a bag has been stolen. Mika says the police are coming. Japanese has a special form for what happens to you.',
- note:{title:'The passive form',html:"<p><b>る-verbs:</b> drop る, add <b>られる</b>: たべる → <b>たべられる</b>. <b>う-verbs:</b> change the last sound to its あ-sound and add <b>れる</b>: かく → <b>かかれる</b>, よむ → <b>よまれる</b>, かう → <b>かわれる</b>. する → <b>される</b>, くる → <b>こられる</b>. <b>わたしは せんせいに ほめられました。</b> I was praised by the teacher. The passive of る-verbs looks like the potential; context tells you which.</p>"},
+ note:{title:'The passive form',html:"<p><b>る-verbs:</b> drop る, add <b>られる</b>: たべる → <b>たべられる</b>. <b>う-verbs:</b> change the last sound to its あ-sound and add <b>れる</b>: かく → <b>かかれる</b>, よむ → <b>よまれる</b>, かう → <b>かわれる</b>. する → <b>される</b>, くる → <b>こられる</b>. <b>わたしは せんせいに ほめられました。</b> I was praised by the teacher. The passive of る-verbs looks like the potential; context tells you which. Passives can also show something that happened to you and was unwelcome: <b>かばんを ぬすまれました。</b> My bag was stolen.</p>"},
  teaser:'The thief is caught. Tomorrow: making someone do something.'},
 171:{title:'Let Me Cook',place:'A cooking class',focus:'causative form',
  story:'A cooking class: the teacher makes everyone cut onions. You ask if you can taste the sauce, and she lets you.',
@@ -1497,11 +1502,11 @@ const OSAKA_DAYS={
  teaser:'The class ends with a bow. Tomorrow: very polite Japanese.'},
 172:{title:'Customer Language',place:'A department store',focus:'keigo basics',
  story:'In a department store every sentence is a bow. Mika tells you that you do not need to speak it yet, but you must recognise it.',
- note:{title:'Polite shop language',html:"<p><b>いらっしゃいませ</b> welcome. <b>かしこまりました</b> certainly. <b>おまたせしました</b> sorry to keep you waiting. Honorific: <b>お + ます-stem + に なります</b>: <b>おかえりに なります</b>. Humble: <b>お + ます-stem + します</b>: <b>おもちします</b> I'll carry it. <b>〜て いただきます</b> I humbly receive: <b>おしえて いただきます。</b></p>"},
+ note:{title:'Polite shop language',html:"<p><b>いらっしゃいませ</b> welcome. <b>かしこまりました</b> certainly. <b>おまたせしました</b> sorry to keep you waiting. Honorific (for the other person's actions, never your own): <b>お + ます-stem + に なります</b>: <b>おかえりに なります</b>. This pattern is not universal: many verbs have special forms, such as <b>いらっしゃる</b> for いく, くる and いる, and <b>めしあがる</b> for たべる. Humble: <b>お + ます-stem + します</b>: <b>おもちします</b> I'll carry it. <b>〜て いただきます</b> I humbly receive: <b>おしえて いただきます。</b></p>"},
  teaser:'You buy a gift and a small bag. Tomorrow: if.'},
 173:{title:'If You Try',place:'A temple on the edge of town',focus:'ば form: if',
  story:'A monk says that if you keep going, you will arrive. In Japanese, that is a different if from the one you learned in Kyoto.',
- note:{title:'The ば form',html:"<p><b>る-verbs:</b> drop る, add <b>れば</b>: たべる → <b>たべれば</b>. <b>う-verbs:</b> change the last sound to its え-sound and add <b>ば</b>: かく → <b>かけば</b>, のむ → <b>のめば</b>. する → <b>すれば</b>, くる → <b>くれば</b>, ある → <b>あれば</b>. <b>いそげば まに あいます。</b> If you hurry you will make it. <b>よければ</b> if that's fine with you. ば states a general condition; たら is more personal.</p>"},
+ note:{title:'The ば form',html:"<p><b>る-verbs:</b> drop る, add <b>れば</b>: たべる → <b>たべれば</b>. <b>う-verbs:</b> change the last sound to its え-sound and add <b>ば</b>: かく → <b>かけば</b>, のむ → <b>のめば</b>. する → <b>すれば</b>, くる → <b>くれば</b>. い-adjectives: <b>よければ</b>, and ない → <b>なければ</b>. <b>いそげば まに あいます。</b> If you hurry you will make it. <b>よければ</b> if that's fine with you. ば states a general condition or a natural result; たら is more personal and is the safer choice for one-off events, requests and past events.</p>"},
  teaser:'He bows and walks off. Tomorrow: even though.'},
 174:{title:'Although, and Besides',place:'A busy ramen shop',focus:'〜のに, 〜し',
  story:'The shop has a line out the door even though it is raining. Mika says it is cheap, it is good, and it is close: three reasons at once.',
@@ -1510,18 +1515,18 @@ const OSAKA_DAYS={
 175:{title:'I Heard That',place:'A cafe with a TV',focus:'〜そうです, 〜らしい: hearsay',
  story:'The cafe TV is showing the weather. Mika says it will rain tomorrow, and you work out how she knows.',
  note:{title:'Hearsay',html:"<p>Plain form + <b>そうです</b> = I hear that: <b>あした あめが ふる そうです。</b> I hear it will rain tomorrow. Plain form + <b>らしい</b> = it seems, apparently: <b>かれは びょうきらしいです。</b> He seems to be ill. Careful: ます-stem + そう is different (it looks like).</p>"},
- teaser:'A man bumps into you and apologises. Tomorrow: apologies.'},
+ teaser:'A man steps on your foot and apologises. Tomorrow: apologies.'},
 176:{title:'Sorry, and I Wish',place:'A busy train',focus:'apologies, 〜て ほしい',
  story:'On the crowded train a man steps on your foot and says sorry. A child is loud, and a woman politely asks them to be quiet.',
- note:{title:'Apologising and asking for change',html:"<p><b>すみません</b> excuse me, sorry. <b>ごめんなさい</b> casual sorry. <b>もうしわけ ありません</b> very formal sorry. Asking someone to do something: て-form + <b>ほしいです</b>: <b>しずかに して ほしいです。</b> I want you to be quiet. Not to: <b>ここで たべないで ほしいです。</b> I do not want you to eat here.</p>"},
+ note:{title:'Apologising and asking for change',html:"<p><b>すみません</b> excuse me, sorry. <b>ごめんなさい</b> casual sorry. <b>もうしわけ ありません</b> very formal sorry. Asking someone to do something: て-form + <b>ほしいです</b>: <b>しずかに して ほしいです。</b> I want you to be quiet. Not to: <b>ここで たべないで ほしいです。</b> I want you not to eat here.</p>"},
  teaser:'The train reaches the last stop. Tomorrow: read a whole text.'},
 177:{title:'A Short Reading',place:'A hotel desk in Osaka',focus:'reading practice',
  story:'No new grammar today. Mika hands you a page and asks you to read a blog post she wrote about her day.',
- note:{title:'Read this',html:"<p lang=\"ja\" style=\"font-size:18px;line-height:1.9\">きのう、友だちと 大阪へ 行きました。朝 九時に 駅で 会いました。昼ごはんに たこやきを 食べました。とても おいしかったです。午後は おおさかじょうを 見ました。人が たくさん いたので、ゆっくり 歩く ことが できませんでした。夜は 電車で ホテルへ かえりました。</p><p class=\"small muted\">Yesterday I went to Osaka with a friend. We met at the station at nine in the morning. For lunch we ate takoyaki. It was very good. In the afternoon we saw Osaka Castle. Because there were many people, we could not walk slowly. In the evening we went back to the hotel by train.</p>"},
+ note:{title:'Read this',html:"<p lang=\"ja\" style=\"font-size:18px;line-height:1.9\">きのう、友だちと 大阪へ 行きました。朝 九時に 駅で 会いました。昼ごはんに たこやきを 食べました。とても おいしかったです。午後は おおさかじょうを 見ました。人が たくさん いたので、ゆっくり 歩く ことが できませんでした。夜は 電車で ホテルへ かえりました。</p><p class=\"small muted\">Yesterday I went to Osaka with a friend. We met at the station at nine in the morning. For lunch we ate takoyaki. It was very good. In the afternoon we saw Osaka Castle. Because there were many people, we could not walk slowly. At night we went back to the hotel by train.</p>"},
  teaser:'Tomorrow: the first part of the mock exam.'},
 178:{title:'Mock N4, Part 1',place:'A study room, Osaka',focus:'mock N4: words, kanji and verbs',
  story:'The first part of a mock exam: words, kanji and verb forms from the whole journey. Take your time. This is Tabi\'s own mock, written by the course, not an official exam.',
- note:{title:'About this mock',html:"<p>Twenty questions from all 178 days, plus verb-form questions. No time limit and nothing is lost if you miss one: wrong answers become yokai to catch tomorrow.</p>"},
+ note:{title:'About this mock',html:"<p>Twenty questions from all 177 days, plus verb-form questions. No time limit and nothing is lost if you miss one: wrong answers become yokai to catch tomorrow.</p>"},
  teaser:'Tomorrow, the second part.'},
 179:{title:'Mock N4, Part 2',place:'A study room, Osaka',focus:'mock N4: grammar and forms',
  story:'The second part: verb forms and patterns. Mika sits across from you, quiet, with tea.',
@@ -1628,7 +1633,7 @@ const WORDS=KWORDS.length?[
  [7,'まち','machi','town'],[7,'みち','michi','road, way'],[7,'むし','mushi','insect, bug'],[7,'みみ','mimi','ear'],[7,'うま','uma','horse'],[7,'あめ','ame','rain'],[7,'くも','kumo','cloud'],[7,'もの','mono','thing'],
  [8,'やま','yama','mountain'],[8,'ゆき','yuki','snow'],[8,'わたし','watashi','I, me'],[8,'にほん','nihon','Japan'],[8,'ほん','hon','book'],[8,'みかん','mikan','mandarin orange'],[8,'ゆめ','yume','dream'],[8,'よこ','yoko','side'],
  [9,'さくら','sakura','cherry blossom'],[9,'いろ','iro','colour'],[9,'よる','yoru','night'],[9,'ひる','hiru','daytime, noon'],[9,'くるま','kuruma','car'],[9,'そら','sora','sky'],[9,'りす','risu','squirrel'],[9,'ろく','roku','six'],
- [10,'ありがとう','arigatō','thank you'],[10,'ごはん','gohan','cooked rice, a meal'],[10,'かばん','kaban','bag'],[10,'ともだち','tomodachi','friend'],[10,'ぱん','pan','bread'],[10,'たべもの','tabemono','food'],[10,'でんわ','denwa','telephone'],[10,'まんが','manga','manga, comics']
+ [10,'ありがとう','arigatō','thank you'],[10,'ごはん','gohan','cooked rice, a meal'],[10,'かばん','kaban','bag'],[10,'ともだち','tomodachi','friend'],[10,'ぱん','pan','bread (usually written パン)'],[10,'たべもの','tabemono','food'],[10,'でんわ','denwa','telephone'],[10,'まんが','manga','manga, comics']
 ].concat(KWORDS).concat(KAMA_WORDS).concat(HAKONE_WORDS).concat(NAGOYA_WORDS).concat(NAG_WORDS_VERBS).concat(KYOTO_WORDS).concat(KYOTO_WORDS_VERBS).concat(OSAKA_WORDS).map(([day,j,r,en])=>({day,j,r,en,id:'w:'+j})):[];
 const WORD={};WORDS.forEach(w=>WORD[w.j]=w);
 const GRAMMAR_TOKENS=[[8,'の'],[10,'は'],[10,'が'],[10,'を'],[10,'です'],[10,'これ'],[10,'たべます']].concat(KGRAMMAR).concat(KAMA_GRAMMAR).concat(HAKONE_GRAMMAR).concat(NAGOYA_GRAMMAR).concat(KYOTO_GRAMMAR).concat(OSAKA_GRAMMAR);
@@ -1637,7 +1642,7 @@ const GRAMMAR_TOKENS=[[8,'の'],[10,'は'],[10,'が'],[10,'を'],[10,'です'],[
 const DAYS=[null,
  {title:'Arrival',place:'Haneda Airport',
   story:"Your flight lands at Haneda. Every sign, announcement and vending machine is in writing you cannot read yet. Mika, your friend in Tokyo, has sent a note: “Don't panic. Japanese is built on five sounds. Learn those first.”",
-  note:{title:'Five pure sounds',html:"<p>Every Japanese syllable is built on five vowels, and they never change. Say each one short and clear, with no gliding: <b>a</b> as in “father”, <b>i</b> as in “machine”, <b>u</b> as in “flute” (lips relaxed, not rounded), <b>e</b> as in “bed”, <b>o</b> as in “pole” but shorter.</p><p class='muted'>If you speak Hindi or Telugu, these are close to अ इ उ ए ओ.</p>"},
+  note:{title:'Five pure sounds',html:"<p>Every Japanese syllable is built on five vowels, and they never change. Say each one short and clear, with no gliding: <b>a</b> as in “father”, <b>i</b> as in “machine”, <b>u</b> as in “put” (lips relaxed, not rounded), <b>e</b> as in “bed”, <b>o</b> as in “pole” but shorter.</p><p class='muted'>Give each vowel one even beat, and do not let it fade into a neutral sound.</p>"},
   teaser:"Mika's second note is smudged: “Meet me at the え_.” Tomorrow's sounds fill in the gap.",
   persona:"Mika, the learner's friend, standing next to them at the airport. She points at things and asks the learner to read or say one word at a time.",
   stage:"The learner knows only the five vowels. Most of your turns: say ONE word, ask what it means or ask them to say it; they reply in English or romaji."},
@@ -1684,7 +1689,7 @@ const DAYS=[null,
   persona:"Mika on a rooftop at sunset.",
   stage:"The learner knows vowels and K, S, T, N, H, M, Y, W rows and ん."},
  {title:'Night Walk',place:'A street of cherry trees',
-  story:"Night falls. Under the trees Mika points at the sky, at the cars, at the lights. The R row finishes the five-by-ten chart. You can now read every basic hiragana.",
+  story:"Night falls. Under the trees Mika points at the sky, at the cars, at the lights. The R row finishes the main kana chart. You can now read every basic hiragana.",
   note:{title:'Near-twins',html:"<p>Watch these pairs: <span class='jp'>る</span> and <span class='jp'>ろ</span>, <span class='jp'>れ</span> and <span class='jp'>ね</span> and <span class='jp'>わ</span>, <span class='jp'>い</span> and <span class='jp'>り</span>. Your yokai will find the ones that trip you up.</p>"},
   teaser:"A shop sign has two tiny dots on a kana you thought you knew. Tomorrow: the dots, and a word you will use every day.",
   persona:"A night-market vendor with a small stall.",
@@ -2856,7 +2861,7 @@ const pageKanji=(k,idx,total)=>(w,c)=>{
   const ws=KJ_ALLWORDS.filter(x=>x.kanji===k.c||x.f.includes(k.c)&&x.day===k.day);
   w.innerHTML=`<div class="small muted">New kanji ${idx+1} of ${total}</div><div class="kbig" lang="ja">${k.c}</div>
    <div class="row" style="justify-content:center"><span class="romaji">${esc(k.m)}</span>${spkBtn(k.words[0].k)}</div>
-   <div class="small muted" style="text-align:center">On: <span lang="ja">${esc(k.on)}</span> · Kun: <span lang="ja">${esc(k.kun)}</span></div><div class="hook">${esc(k.hook)}</div>
+   <div class="small muted" style="text-align:center">On: <span lang="ja">${esc(k.on)}</span> · Kun: <span lang="ja">${esc(k.kun)}</span></div><div class="hook">${esc(k.hook)}</div><div class="tiny muted" style="text-align:center">A memory picture to help you remember, not the history of the character.</div>
    <div class="words" lang="ja">${k.words.map(x=>`<div class="word"><span class="j">${x.f}</span><span class="r">${esc(x.k)} · ${esc(x.r)}</span><span class="m">${esc(x.en)}</span>${spkBtn(x.k,'sm')}</div>`).join('')}</div>
    <div class="tr"></div><div class="tiny muted" id="ttsnote"></div>`+lessonBar(c.i>0,'Next');
   if(STROKES[k.c]){const t=mountTracer($('.tr',w),{chars:[k.c],start:k.c});setTimeout(()=>{if(w.isConnected)t.watch();},400);}
