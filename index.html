@@ -2194,6 +2194,7 @@ async function authInit(){
     const fb=window.firebase;
     if(!fb.apps.length)fb.initializeApp(cfg);
     AUTH.fb=fb;AUTH.db=fb.firestore();AUTH.configured=true;
+    try{const a=fb.auth();if(a.getRedirectResult)await withTimeout(a.getRedirectResult(),8000);}catch(e){AUTH.redirectErr=(e&&(e.code||e.message))||'unknown';}
     AUTH.user=await withTimeout(new Promise(res=>{let off=null,done=false;off=fb.auth().onAuthStateChanged(u=>{if(done)return;done=true;try{off&&off();}catch(e){}res(u||null);});}),8000).catch(()=>null);
   }catch(e){AUTH.configured=false;AUTH.error=String(e&&e.message||e);}
 }
@@ -2222,12 +2223,12 @@ function authGate(){
       <p class="muted">Sign in with Google to keep your streak and progress on every device, or continue as a guest and keep it on this device only.</p>
       <button type="button" class="btn google" id="gg">${G_ICON}<span>Continue with Google</span></button>
       <button type="button" class="btn quiet" id="gu">Continue as guest</button>
-      <p class="small" id="gerr" role="alert" style="color:var(--seal)"></p></div>`;
+      <p class="small" id="gerr" role="alert" style="color:var(--seal)">${AUTH.redirectErr?'Sign-in did not finish ('+esc(AUTH.redirectErr)+').':''}</p></div>`;
     $('#gu').onclick=()=>{lsSet(GUEST_KEY,'1');document.body.classList.remove('focus');res();};
     $('#gg').onclick=async()=>{
       const b=$('#gg');b.disabled=true;$('#gerr').textContent='';
       try{await googleSignIn();}
-      catch(e){b.disabled=false;const c=e&&e.code;$('#gerr').textContent=c==='auth/popup-closed-by-user'||c==='auth/cancelled-popup-request'?'Sign-in was cancelled.':c==='auth/unauthorized-domain'?'This site address is not allowed yet in Firebase (Authorized domains).':'Could not sign in. Check your connection and try again.';}
+      catch(e){b.disabled=false;const c=e&&e.code;$('#gerr').textContent=c==='auth/popup-closed-by-user'||c==='auth/cancelled-popup-request'?'Sign-in was cancelled.':c==='auth/unauthorized-domain'?'This site address is not allowed yet in Firebase (Authorized domains).':'Could not sign in ('+(c||'unknown')+'). Check your connection and try again.';}
     };
   });
 }
@@ -2246,7 +2247,7 @@ function paintAcct(){
   h+=`<div class="row"><button type="button" class="btn sm quiet" id="thm">Theme: ${themeLabel()}</button></div>`;
   el.className='acct';el.innerHTML=h;
   const so=$('#so');if(so)so.onclick=signOutNow;
-  const si=$('#si');if(si)si.onclick=async()=>{si.disabled=true;try{await googleSignIn();}catch(e){si.disabled=false;$('#sierr').textContent='Could not sign in. Try again.';}};
+  const si=$('#si');if(si)si.onclick=async()=>{si.disabled=true;try{await googleSignIn();}catch(e){si.disabled=false;$('#sierr').textContent='Could not sign in ('+((e&&e.code)||'unknown')+'). Try again.';}};
   $('#thm').onclick=()=>{cycleTheme();paintAcct();};
 }
 
