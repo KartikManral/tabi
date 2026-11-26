@@ -1,6 +1,8 @@
 /* Vercel serverless function: the Tabi tutor. Keeps your Anthropic key on the server.
    Environment variables (Vercel > Settings > Environment Variables):
-     ANTHROPIC_API_KEY   required
+     GEMINI_API_KEY      free option: key from aistudio.google.com/apikey (used when no Anthropic key is set)
+     GEMINI_MODEL        optional, default gemini-2.5-flash
+     ANTHROPIC_API_KEY   paid option (used first when set)
      TUTOR_MODEL         optional, default claude-sonnet-5-5
      FIREBASE_API_KEY    optional, the same apiKey as firebase-config.js; lets signed-in users have a higher hourly limit */
 const buckets = new Map();
@@ -31,7 +33,8 @@ module.exports = async (req, res) => {
   const origin = req.headers.origin;
   if (origin) { try { if (new URL(origin).host !== req.headers.host) return res.status(403).json({ code: 'error' }); } catch (e) { return res.status(403).json({ code: 'error' }); } }
   const apiKey = process.env.ANTHROPIC_API_KEY;
-  if (!apiKey) return res.status(500).json({ code: 'not_configured' });
+  const gKey = process.env.GEMINI_API_KEY;
+  if (!apiKey && !gKey) return res.status(500).json({ code: 'not_configured' });
   let body = req.body;
   if (typeof body === 'string') { try { body = JSON.parse(body); } catch (e) { body = null; } }
   const msgs = body && body.messages;
@@ -49,14 +52,38 @@ module.exports = async (req, res) => {
   else if (!allow('ip:' + ip, 25, 3600e3)) return res.status(429).json({ code: 'guest_limit' });
 
   try {
-    const r = await fetch('https://api.anthropic.com/v1/messages', {
+    if (apiKey) {
+      const r = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json', 'x-api-key': apiKey, 'anthropic-version': '2023-06-01' },
+        body: JSON.stringify({ model: process.env.TUTOR_MODEL || 'claude-sonnet-5-5', max_tokens: 600, messages: msgs })
+      });
+      if (!r.ok) return res.status(r.status === 429 ? 429 : 502).json({ code: r.status === 429 ? 'rate_limited' : 'error' });
+      const d = await r.json();
+      const text = (d.content || []).filter(b => b.type === 'text').map(b => b.text).join('');
+      if (!text) return res.status(502).json({ code: 'empty_completion' });
+      return res.status(200).json({ text });
+    }
+    /* free route: Google Gemini. Merge neighbouring same-role turns, ask for JSON only. */
+    const model = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
+    const contents = [];
+    for (const m of msgs) {
+      const role = m.role === 'assistant' ? 'model' : 'user';
+      const last = contents[contents.length - 1];
+      if (last && last.role === role) last.parts[0].text += '\n\n' + m.content;
+      else contents.push({ role, parts: [{ text: m.content }] });
+    }
+    const gen = { maxOutputTokens: 1200, temperature: 0.4, responseMimeType: 'application/json' };
+    if (/2\.5-flash/.test(model)) gen.thinkingConfig = { thinkingBudget: 0 };
+    const r = await fetch('https://generativelanguage.googleapis.com/v1beta/models/' + encodeURIComponent(model) + ':generateContent', {
       method: 'POST',
-      headers: { 'content-type': 'application/json', 'x-api-key': apiKey, 'anthropic-version': '2023-06-01' },
-      body: JSON.stringify({ model: process.env.TUTOR_MODEL || 'claude-sonnet-5-5', max_tokens: 600, messages: msgs })
+      headers: { 'content-type': 'application/json', 'x-goog-api-key': gKey },
+      body: JSON.stringify({ contents, generationConfig: gen })
     });
     if (!r.ok) return res.status(r.status === 429 ? 429 : 502).json({ code: r.status === 429 ? 'rate_limited' : 'error' });
     const d = await r.json();
-    const text = (d.content || []).filter(b => b.type === 'text').map(b => b.text).join('');
+    const parts = d.candidates && d.candidates[0] && d.candidates[0].content && d.candidates[0].content.parts || [];
+    const text = parts.map(p => p.text || '').join('');
     if (!text) return res.status(502).json({ code: 'empty_completion' });
     return res.status(200).json({ text });
   } catch (e) { return res.status(502).json({ code: 'error' }); }
