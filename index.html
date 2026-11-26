@@ -1,13 +1,12 @@
-<title>Tabi</title>
-<meta name="claude:viewport-fit-sides" content="cover">
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232A4A8D'/%3E%3Ctext x='32' y='45' font-size='38' text-anchor='middle' fill='white' font-family='serif'%3E%E6%97%85%3C/text%3E%3C/svg%3E"><script src="firebase-config.js"></script><title>Tabi</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&family=Shippori+Mincho+B1:wght@400;600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
-<style>
+<style>html{-webkit-tap-highlight-color:transparent}
 /* Layout: phone-first single column with bottom tabs; at 900px+ a left rail and a centred reading column.
    The one loud element is the red hanko seal (streak, day complete, region stamps). Everything else stays quiet indigo ink on cool washi paper. */
 :root{
-  --paper:#E5E8E3; --card:#F4F5F1; --card2:#EBEDE8; --ink:#1A2644; --ink2:#4A5675; --line:#C6CCC7;
-  --indigo:#2A4A8D; --on-indigo:#FFFFFF; --seal:#BF3A2B; --on-seal:#FFFFFF; --moss:#37724C; --amber:#93651A;
-  --ghost:#BBC2CF; --good-bg:#DAEADB; --bad-bg:#F4DAD6; --warn-bg:#F2E6CC; --shadow:0 1px 0 rgba(26,38,68,.06);
+  --paper:#FFFFFF; --card:#F5F6F8; --card2:#ECEEF2; --ink:#14192B; --ink2:#555C70; --line:#DDE0E7;
+  --indigo:#2A4A8D; --on-indigo:#FFFFFF; --seal:#BF3A2B; --on-seal:#FFFFFF; --moss:#2F6B46; --amber:#8A5E14;
+  --ghost:#C5CAD6; --good-bg:#E3F1E5; --bad-bg:#FBE4E0; --warn-bg:#F7EDD6; --shadow:0 1px 0 rgba(20,25,43,.05);
   --r:14px;
   --f-display:"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif;
   --f-ui:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Noto Sans JP",system-ui,-apple-system,"Segoe UI",sans-serif;
@@ -15,16 +14,17 @@
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --paper:#0E1524; --card:#162038; --card2:#1B2744; --ink:#E8EBF3; --ink2:#A3AEC8; --line:#2A3757;
-    --indigo:#86A6EA; --on-indigo:#0E1524; --seal:#E2564A; --on-seal:#FFFFFF; --moss:#73C08E; --amber:#E2A44E;
-    --ghost:#34436A; --good-bg:#18321F; --bad-bg:#3B1F23; --warn-bg:#3A2F17; --shadow:none; color-scheme:dark;
+    --paper:#000000; --card:#121316; --card2:#1B1D22; --ink:#F1F2F5; --ink2:#A4A9B5; --line:#2B2E36;
+    --indigo:#8FAEF0; --on-indigo:#000000; --seal:#E2564A; --on-seal:#FFFFFF; --moss:#73C08E; --amber:#E2A44E;
+    --ghost:#3A3F4C; --good-bg:#10291A; --bad-bg:#33181B; --warn-bg:#30270F; --shadow:none; color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
-  --paper:#0E1524; --card:#162038; --card2:#1B2744; --ink:#E8EBF3; --ink2:#A3AEC8; --line:#2A3757;
-  --indigo:#86A6EA; --on-indigo:#0E1524; --seal:#E2564A; --on-seal:#FFFFFF; --moss:#73C08E; --amber:#E2A44E;
-  --ghost:#34436A; --good-bg:#18321F; --bad-bg:#3B1F23; --warn-bg:#3A2F17; --shadow:none; color-scheme:dark;
+  --paper:#000000; --card:#121316; --card2:#1B1D22; --ink:#F1F2F5; --ink2:#A4A9B5; --line:#2B2E36;
+  --indigo:#8FAEF0; --on-indigo:#000000; --seal:#E2564A; --on-seal:#FFFFFF; --moss:#73C08E; --amber:#E2A44E;
+  --ghost:#3A3F4C; --good-bg:#10291A; --bad-bg:#33181B; --warn-bg:#30270F; --shadow:none; color-scheme:dark;
 }
+:root[data-theme="light"]{color-scheme:light}
 *{box-sizing:border-box}
 html,body{height:auto}
 body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 var(--f-ui);
@@ -42,7 +42,7 @@ button{font:inherit;color:inherit}
 .hide{display:none!important}
 
 /* shell */
-.app{max-width:1020px;margin:0 auto;display:block}
+.app{max-width:1100px;margin:0 auto;display:block}
 main{min-width:0;padding-block:18px 108px;max-width:760px;margin:0 auto}
 .rail{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--card);border-top:1px solid var(--line);
   display:flex;justify-content:space-around;
@@ -56,12 +56,13 @@ main{min-width:0;padding-block:18px 108px;max-width:760px;margin:0 auto}
 body.focus .rail{display:none}
 body.focus main{padding-bottom:24px}
 @media (min-width:900px){
-  .app{display:grid;grid-template-columns:200px minmax(0,1fr);gap:40px}
+  .app{display:grid;grid-template-columns:200px minmax(0,760px);gap:48px;justify-content:center}
   .rail{position:sticky;top:0;align-self:start;height:100vh;flex-direction:column;justify-content:flex-start;gap:6px;border:0;background:none;padding:28px 0}
   .rail .logo{display:flex;align-items:center;gap:10px;margin-bottom:22px}
   .tab{flex:none;flex-direction:row;justify-content:flex-start;gap:12px;padding:0 14px;min-height:46px;font-size:16px}
   .tab .dot{position:static;margin-left:auto}
   main{padding-block:30px 60px;margin:0;width:100%}
+  .top{display:none}
 }
 
 /* generic */
@@ -263,11 +264,17 @@ hr.dash{border:0;border-top:1.5px dashed var(--line);margin:0}
 .sents{display:grid;gap:8px}
 .sents>div{background:var(--card2);border-radius:10px;padding:10px 12px;display:grid;gap:2px}
 .sents .jp{font-size:22px}
+.gate{min-height:70vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:18px;max-width:420px;margin:0 auto}
+.gate .btn{width:100%}
+.btn.google{background:#fff;color:#1f1f1f;border-color:#dadce0;gap:10px}
+:root[data-theme="dark"] .btn.google{border-color:#5f6368}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn.google{border-color:#5f6368}}
+.acct{display:flex;flex-direction:column;gap:8px;padding:12px 14px;border:1px solid var(--line);border-radius:12px}
 footer.fine{margin-top:30px;color:var(--ink2);font-size:12.5px;display:grid;gap:6px}
 footer.fine a{color:var(--indigo)}
 .sav{font-size:12.5px;color:var(--ink2)}
 .sav.warn{color:var(--amber);font-weight:700}
-</style>
+</style></head><body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
   <filter id="ink" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4"/></filter>
 </defs></svg>
@@ -1751,10 +1758,11 @@ function msToRollover(){const n=new Date();const t=new Date(n.getFullYear(),n.ge
 
 /* ---- state ---- */
 const LS_KEY='tabi.v1';
+let lsKey=LS_KEY;
 let S=null,dbDoc=null,saveMode='local',dirty=false,saving=false,commitTimer=null;
 const newState=()=>({v:1,created:Date.now(),updated:0,day0:false,log:{},done:{},items:{},yokai:{},stats:{answers:0,correct:0},speed:null,reports:[]});
-function loadLocal(){try{const t=localStorage.getItem(LS_KEY);return t?JSON.parse(t):null;}catch(e){return null;}}
-function saveLocal(){try{localStorage.setItem(LS_KEY,JSON.stringify(S));}catch(e){}}
+function loadLocal(k){try{const t=localStorage.getItem(k||lsKey);return t?JSON.parse(t):null;}catch(e){return null;}}
+function saveLocal(){try{localStorage.setItem(lsKey,JSON.stringify(S));}catch(e){}}
 function touch(){S.updated=Date.now();dirty=true;clearTimeout(commitTimer);commitTimer=setTimeout(commit,1200);}
 async function commit(){
   saveLocal();
@@ -1773,26 +1781,39 @@ function paintSave(){
 }
 let SAVE_NOTE='Progress is saved on this device only.';
 async function initStorage(){
+  let cloudDoc=null;
+  if(typeof AUTH!=='undefined'&&AUTH.user&&AUTH.db){lsKey=LS_KEY+':'+AUTH.user.uid;cloudDoc=AUTH.db.collection('users').doc(AUTH.user.uid);}
   S=loadLocal();
-  try{
-    const use=window.claude&&window.claude.use?window.claude.use.bind(window.claude):null;
-    if(use){
-      const [db,user]=await Promise.all([use('db'),use('user')]);
-      const id=(db&&user)?await user.id():null;
-      if(db&&id){
-        const doc=db.collection('data/users/'+id).doc('save');
-        try{
-          const snap=await withTimeout(doc.get(),10000);
-          if(snap.exists){
-            let remote=null;try{remote=JSON.parse(snap.data().json);}catch(e){}
-            if(remote&&(!S||(remote.updated||0)>=(S.updated||0)))S=remote;
-          }
-          dbDoc=doc;saveMode='cloud';
-          if(S&&(!snap.exists||(S.updated||0)>((snap.exists&&JSON.parse(snap.data().json).updated)||0))){dirty=true;}
-        }catch(e){SAVE_NOTE='Could not reach your saved account progress, so this visit saves on this device only.';}
-      }else{SAVE_NOTE='Progress is saved on this device only (account saving needs a signed-in view).';}
-    }
-  }catch(e){}
+  if(cloudDoc){
+    try{
+      const snap=await withTimeout(cloudDoc.get(),10000);
+      let remote=null;if(snap.exists){try{remote=JSON.parse(snap.data().json);}catch(e){}}
+      if(remote&&(!S||(remote.updated||0)>=(S.updated||0)))S=remote;
+      else if(!remote&&!S){const g=loadLocal(LS_KEY);if(g){S=g;dirty=true;}}   /* first sign-in: keep what the guest session had */
+      else if(S&&(!remote||(S.updated||0)>(remote.updated||0)))dirty=true;
+      dbDoc=cloudDoc;saveMode='cloud';
+    }catch(e){SAVE_NOTE='Could not reach your account just now, so this visit saves on this device only.';}
+  }else{
+    try{
+      const use=window.claude&&window.claude.use?window.claude.use.bind(window.claude):null;
+      if(use){
+        const [db,user]=await Promise.all([use('db'),use('user')]);
+        const id=(db&&user)?await user.id():null;
+        if(db&&id){
+          const doc=db.collection('data/users/'+id).doc('save');
+          try{
+            const snap=await withTimeout(doc.get(),10000);
+            if(snap.exists){
+              let remote=null;try{remote=JSON.parse(snap.data().json);}catch(e){}
+              if(remote&&(!S||(remote.updated||0)>=(S.updated||0)))S=remote;
+            }
+            dbDoc=doc;saveMode='cloud';
+            if(S&&(!snap.exists||(S.updated||0)>((snap.exists&&JSON.parse(snap.data().json).updated)||0))){dirty=true;}
+          }catch(e){SAVE_NOTE='Could not reach your saved account progress, so this visit saves on this device only.';}
+        }else{SAVE_NOTE='Progress is saved on this device only (account saving needs a signed-in view).';}
+      }else if(typeof AUTH!=='undefined'&&AUTH.configured){SAVE_NOTE='Progress is saved on this device only. Sign in with Google to keep it across devices.';}
+    }catch(e){}
+  }
   if(!S){S=newState();touch();}
   S.log=S.log||{};S.done=S.done||{};S.items=S.items||{};S.yokai=S.yokai||{};S.stats=S.stats||{answers:0,correct:0};S.reports=S.reports||[];
   if(dirty)commit();
@@ -2148,6 +2169,87 @@ function lessonQuiz(day){
   return shuffle(qs);
 }
 
+/* ================= ACCOUNT: Google sign-in (Firebase) or guest; theme ================= */
+const FB_VER='10.12.2';
+const AUTH={configured:false,user:null,db:null,fb:null,error:''};
+const GUEST_KEY='tabi.guest',THEME_KEY='tabi.theme';
+const lsGet=k=>{try{return localStorage.getItem(k);}catch(e){return null;}};
+const lsSet=(k,v)=>{try{v==null?localStorage.removeItem(k):localStorage.setItem(k,v);}catch(e){}};
+
+/* theme: Auto follows the device, Light = white, Dark = black */
+function applyTheme(){const t=lsGet(THEME_KEY);if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);else document.documentElement.removeAttribute('data-theme');}
+function themeLabel(){const t=lsGet(THEME_KEY);return t==='light'?'Light':t==='dark'?'Dark':'Auto';}
+function cycleTheme(){const t=lsGet(THEME_KEY);lsSet(THEME_KEY,t==='light'?'dark':t==='dark'?null:'light');applyTheme();}
+applyTheme();
+
+function loadScript(src){return new Promise((res,rej)=>{const s=document.createElement('script');s.src=src;s.async=false;s.onload=res;s.onerror=()=>rej(new Error('load '+src));document.head.appendChild(s);});}
+async function authInit(){
+  const cfg=window.TABI_FIREBASE;
+  if(!cfg||!cfg.apiKey||!cfg.projectId)return;           /* not configured: guest-only */
+  try{
+    if(!window.firebase){
+      const base='https://www.gstatic.com/firebasejs/'+FB_VER+'/firebase-';
+      await withTimeout(Promise.all([]).then(()=>loadScript(base+'app-compat.js')).then(()=>Promise.all([loadScript(base+'auth-compat.js'),loadScript(base+'firestore-compat.js')])),12000);
+    }
+    const fb=window.firebase;
+    if(!fb.apps.length)fb.initializeApp(cfg);
+    AUTH.fb=fb;AUTH.db=fb.firestore();AUTH.configured=true;
+    AUTH.user=await withTimeout(new Promise(res=>{let off=null,done=false;off=fb.auth().onAuthStateChanged(u=>{if(done)return;done=true;try{off&&off();}catch(e){}res(u||null);});}),8000).catch(()=>null);
+  }catch(e){AUTH.configured=false;AUTH.error=String(e&&e.message||e);}
+}
+async function authToken(){try{return AUTH.user?await AUTH.user.getIdToken():null;}catch(e){return null;}}
+async function googleSignIn(){
+  const fb=AUTH.fb;if(!fb)throw new Error('not configured');
+  const prov=new fb.auth.GoogleAuthProvider();
+  try{await fb.auth().signInWithPopup(prov);}
+  catch(e){
+    if(e&&(e.code==='auth/popup-blocked'||e.code==='auth/operation-not-supported-in-this-environment')){await fb.auth().signInWithRedirect(prov);return;}
+    throw e;
+  }
+  lsSet(GUEST_KEY,null);
+  location.reload();
+}
+async function signOutNow(){try{if(AUTH.fb)await AUTH.fb.auth().signOut();}catch(e){}lsSet(GUEST_KEY,null);location.reload();}
+
+const G_ICON='<svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9 3.5l6.7-6.7C35.6 2.4 30.2 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.8 6.1C12.3 13.6 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.7c-.6 3-2.3 5.5-4.8 7.2l7.5 5.8c4.4-4.1 7.1-10.1 7.1-17.5z"/><path fill="#FBBC05" d="M10.4 28.7c-.5-1.4-.8-3-.8-4.7s.3-3.200.8-4.700l-7.800-6.100C1 16.500 0 20.100 0 24s1 7.500 2.600 10.800l7.800-6.100z"/><path fill="#34A853" d="M24 48c6.200 0 11.400-2 15.200-5.600l-7.500-5.800c-2.100 1.400-4.700 2.200-7.700 2.200-6.300 0-11.700-4.100-13.600-9.800l-7.800 6.100C6.500 42.600 14.600 48 24 48z"/></svg>';
+
+/* first screen when accounts are available and nobody has chosen yet */
+function authGate(){
+  return new Promise(res=>{
+    document.body.classList.add('focus');
+    $('#main').innerHTML=`<div class="gate">
+      <div>${logoSVG(64)}</div><h1 class="jp">Tabi <span class="muted">旅</span></h1>
+      <p class="muted">Sign in with Google to keep your streak and progress on every device, or continue as a guest and keep it on this device only.</p>
+      <button type="button" class="btn google" id="gg">${G_ICON}<span>Continue with Google</span></button>
+      <button type="button" class="btn quiet" id="gu">Continue as guest</button>
+      <p class="small" id="gerr" role="alert" style="color:var(--seal)"></p></div>`;
+    $('#gu').onclick=()=>{lsSet(GUEST_KEY,'1');document.body.classList.remove('focus');res();};
+    $('#gg').onclick=async()=>{
+      const b=$('#gg');b.disabled=true;$('#gerr').textContent='';
+      try{await googleSignIn();}
+      catch(e){b.disabled=false;const c=e&&e.code;$('#gerr').textContent=c==='auth/popup-closed-by-user'||c==='auth/cancelled-popup-request'?'Sign-in was cancelled.':c==='auth/unauthorized-domain'?'This site address is not allowed yet in Firebase (Authorized domains).':'Could not sign in. Check your connection and try again.';}
+    };
+  });
+}
+
+/* account box on the home screen */
+function paintAcct(){
+  const el=$('#acct');if(!el)return;
+  let h='';
+  if(AUTH.user){
+    h=`<div class="small"><b>Signed in</b> as ${esc(AUTH.user.displayName||AUTH.user.email||'your Google account')}${AUTH.user.email&&AUTH.user.displayName?` <span class="muted">(${esc(AUTH.user.email)})</span>`:''}</div>
+       <div class="row"><button type="button" class="btn sm quiet" id="so">Sign out</button></div>`;
+  }else if(AUTH.configured){
+    h=`<div class="small"><b>Guest.</b> Progress stays on this device.</div>
+       <div class="row"><button type="button" class="btn sm google" id="si">${G_ICON}<span>Sign in with Google</span></button></div><div class="small" id="sierr" style="color:var(--seal)"></div>`;
+  }
+  h+=`<div class="row"><button type="button" class="btn sm quiet" id="thm">Theme: ${themeLabel()}</button></div>`;
+  el.className='acct';el.innerHTML=h;
+  const so=$('#so');if(so)so.onclick=signOutNow;
+  const si=$('#si');if(si)si.onclick=async()=>{si.disabled=true;try{await googleSignIn();}catch(e){si.disabled=false;$('#sierr').textContent='Could not sign in. Try again.';}};
+  $('#thm').onclick=()=>{cycleTheme();paintAcct();};
+}
+
 /* ================= COMPONENTS: tracer, quiz, tutor chat ================= */
 const reduceMotion=()=>{try{return matchMedia('(prefers-reduced-motion: reduce)').matches;}catch(e){return false;}};
 const spkBtn=(t,cls)=>`<button type="button" class="spk ${cls||''}" data-speak="${esc(t)}" aria-label="Play sound">${ICON.speaker}</button>`;
@@ -2330,8 +2432,26 @@ const SAMPLE_MSG={
   session_expired:'Your session expired. Sign in again to keep talking.',
   refused:'Claude declined that message. Try saying it differently.',
   invalid_json:'The tutor sent something unreadable. Send your message again.',
-  empty_completion:'The tutor sent nothing back. Try again.'
+  empty_completion:'The tutor sent nothing back. Try again.',
+  network:'Could not reach the tutor. Check your connection and try again.',
+  guest_limit:'You have reached the hourly limit for guests. Sign in with Google for more, or try again later.',
+  not_configured:'The tutor is not switched on for this site yet.',
+  error:'The tutor could not answer just now. Try sending again.'
 };
+/* On the website (outside Claude) the tutor goes through this site's own /api/tutor function. */
+function webSampler(){
+  return {async json(input,o){
+    const headers={'Content-Type':'application/json'};
+    try{const tok=await authToken();if(tok)headers.Authorization='Bearer '+tok;}catch(e){}
+    let r;
+    try{r=await fetch('/api/tutor',{method:'POST',headers,body:JSON.stringify({messages:input}),signal:o&&o.signal});}
+    catch(e){if(e&&e.name==='AbortError')throw {code:'cancelled'};throw {code:'network'};}
+    let d=null;try{d=await r.json();}catch(e){}
+    if(!r.ok)throw {code:(d&&d.code)||(r.status===429?'rate_limited':'error')};
+    const txt=String(d&&d.text||'').replace(/^\s*```(?:json)?\s*|\s*```\s*$/g,'').trim();
+    try{return JSON.parse(txt);}catch(e){const m=txt.match(/\{[\s\S]*\}/);if(m){try{return JSON.parse(m[0]);}catch(e2){}}throw {code:'invalid_json'};}
+  }};
+}
 const PUNCT=/[、。？！?!]/g;
 function validateTutor(o,tokens,chars){
   const bad=[];
@@ -2345,6 +2465,7 @@ async function mountChat(host,opts){
   const upto=opts.upto,chars=allowedChars(upto),learned=[...chars],tokens=tokensUpTo(upto);
   const use=window.claude&&window.claude.use?window.claude.use.bind(window.claude):null;
   let sample=null;try{sample=use?await use('sample'):null;}catch(e){}
+  if(!sample&&location.protocol!=='file:')sample=webSampler();
   if(!sample){host.innerHTML=opts.fallback?opts.fallback():`<div class="card"><p>The tutor is not available in this view. Open Tabi from your Claude library to talk.</p></div>`;opts.onFallback&&opts.onFallback();return;}
   const RULES=`You are the speaking partner inside Tabi, a Japanese learning app, for a complete beginner on day ${upto} of a 180-day course. Role-play: ${opts.persona}
 ${opts.stage||''}
@@ -2547,10 +2668,10 @@ VIEWS.home=function(m){
    <section class="stack s"><div class="sec-title"><h2>Bonus hour</h2><span class="small muted num">${Math.round(bonus)} of 240 min this week</span></div>
      <div class="bar"><i style="width:${Math.min(100,bonus/240*100)}%"></i></div>
      <div class="modes">${modes.map(([a,b,c])=>`<button type="button" class="mode" ${c}><b>${a}</b><span>${esc(b)}</span></button>`).join('')}</div></section>
-   <footer class="fine"><div id="savestate" class="sav"></div>
+   <footer class="fine"><div id="acct"></div><div id="savestate" class="sav"></div>
      <div class="row"><button type="button" class="btn sm quiet" id="exp">Copy my progress</button><button type="button" class="btn sm quiet" id="rst">Reset everything</button></div><div id="exptx" class="small"></div>
      <div>Stroke-order data: <a href="http://kanjivg.tagaini.net" target="_blank" rel="noopener">KanjiVG</a> (CC BY-SA 3.0). Sound uses your device's Japanese voice, which varies. Tabi is a study aid, not a replacement for a teacher or the official JLPT material.</div></footer></div>`;
-  paintSave();
+  paintSave();paintAcct();
   $('#exp').onclick=async()=>{const txt=JSON.stringify(S);try{await navigator.clipboard.writeText(txt);$('#exptx').textContent='Copied. Paste it somewhere safe.';}catch(e){$('#exptx').innerHTML='<textarea readonly rows="4" style="width:100%" aria-label="Progress data">'+esc(txt)+'</textarea>';}};
   $('#rst').onclick=()=>{$('#exptx').innerHTML=`<div class="fb bad"><b>Erase all progress, streak and yokai?</b> This cannot be undone.<div class="row" style="margin-top:8px"><button type="button" class="btn sm" id="rst2">Erase everything</button><button type="button" class="btn sm quiet" id="rst3">Keep it</button></div></div>`;
     $('#rst3').onclick=()=>{$('#exptx').innerHTML='';};$('#rst2').onclick=()=>{S=newState();touch();commit();go('home');};};
@@ -2879,6 +3000,7 @@ VIEWS.trace=function(m){
 /* ================= BOOT ================= */
 (async function boot(){
   $('#main').innerHTML='<p class="muted" style="padding-top:40px;text-align:center">Opening your journey…</p>';
+  try{await authInit();if(AUTH.configured&&!AUTH.user&&!lsGet(GUEST_KEY))await authGate();}catch(e){}
   try{await initStorage();}catch(e){S=S||newState();}
   const n=FROM_HASH[location.hash.slice(1)];
   VIEW={name:n&&n!=='flight'?n:'home',params:{}};
@@ -2886,3 +3008,4 @@ VIEWS.trace=function(m){
 })();
 
 </script>
+</body></html>
